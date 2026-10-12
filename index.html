@@ -275,6 +275,26 @@
     #about .current-focus strong{font-weight:750;color:#23432b}
     @media(max-width:580px){#about .current-focus{padding:20px 18px;gap:12px;font-size:14px;line-height:1.8}#about .current-focus>.icon{width:19px;height:19px}#about .current-focus-label{font-size:11px;letter-spacing:.07em}}
     @media(max-width:580px){#about.about-layout{gap:20px}}
+    /* English by default; Simplified Chinese is an explicit user choice. */
+    .site-header .nav-links{margin-left:auto;gap:24px}
+    .language-switch{display:inline-flex;align-items:center;flex:none;gap:2px;padding:3px;border:1px solid #cbd8c5;background:#eff3eb;border-radius:7px}
+    .language-option{display:inline-flex;align-items:center;justify-content:center;min-width:40px;min-height:32px;padding:5px 9px;border:1px solid transparent;border-radius:4px;background:transparent;color:#5c6f5e;font-size:12px;font-weight:600;line-height:1.5;white-space:nowrap;transition:background .2s,color .2s}
+    .language-option:hover{color:#274f36;background:#e3eadf}
+    .language-option[aria-pressed="true"]{background:#fff;color:#264e37;border-color:#cfdbca;box-shadow:0 1px 3px rgba(32,46,41,.05)}
+    #publications .pub-translation{margin:7px 0 0;font-size:13px;line-height:1.85;font-weight:450;color:var(--muted);overflow-wrap:anywhere}
+    .translation-note{font-size:12px;line-height:1.8;color:var(--muted);margin:-8px 0 20px}
+    html[lang="zh-CN"] h2{font-family:var(--sans);font-size:28px;font-weight:600;line-height:1.45;letter-spacing:.02em}
+    html[lang="zh-CN"] #about h2{font-size:28px}
+    html[lang="zh-CN"] .hero .role{letter-spacing:.025em}
+    html[lang="zh-CN"] .hero-description,html[lang="zh-CN"] .about-content p{line-height:2}
+    html[lang="zh-CN"] .project-card p{font-size:14px;line-height:1.9}
+    html[lang="zh-CN"] .small-label,html[lang="zh-CN"] #about .current-focus-label{letter-spacing:.07em}
+    html[lang="zh-CN"] .group-label h3{letter-spacing:.025em}
+    html[lang="zh-CN"] .publication-count{white-space:nowrap}
+    html[lang="zh-CN"] #pub-search{font-size:14px}
+    @media(max-width:1100px){.site-header .brand-caption,.site-header .brand-divider{display:none}.site-header .nav-links{gap:19px}}
+    @media(max-width:760px){.site-header .nav-inner{gap:16px}.site-header .nav-links{gap:16px}.language-option{min-width:36px;padding-inline:7px}.site-header .nav-contact{display:none}}
+    @media(max-width:640px){html{scroll-padding-top:128px}.site-header .nav-inner{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px 12px;height:auto;min-height:105px;padding:12px 0 6px}.site-header .brand{grid-column:1;grid-row:1;justify-self:start}.language-switch{grid-column:2;grid-row:1}.site-header .nav-links{grid-column:1 / -1;grid-row:2;margin-left:0;justify-content:flex-start;gap:27px;min-width:0}.site-header .nav-links a{font-size:12px;min-height:34px;display:inline-flex;align-items:center}.site-header .nav-links .nav-contact{display:none}.site-header .nav-links a[aria-current="location"]:after{bottom:0}html[lang="zh-CN"] h2,html[lang="zh-CN"] #about h2{font-size:25px}.translation-note{margin:-5px 0 17px}.search input{font-size:16px}html[lang="zh-CN"] #pub-search{font-size:16px}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}}
     @media print{body{background:#fff;font-size:11px}.container{width:100%}.site-header,.research-art,.hero-actions,.hero-bottom,.publications-toolbar,.copy-email,.back-to-top,.toast{display:none!important}.hero{display:block;padding:12px 0 25px}h1{font-size:55px}.hero-description{max-width:none}.section{padding:24px 0}.section-heading{margin-bottom:16px}.about-layout{grid-template-columns:160px 1fr}.projects-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.project-card{break-inside:avoid;box-shadow:none;padding:14px}.pub-item{break-inside:avoid;padding:10px 0}.pub-item[hidden]{display:grid!important}.pub-title{font-size:11px}.empty-state{display:none!important}.contact-section{padding:24px 0}.contact-actions .button{background:transparent;color:var(--ink)}footer{padding:14px 0}a[href^="http"]{text-decoration:none}}
   </style>
@@ -312,6 +332,10 @@
         <a href="#publications" data-nav="publications">Publications</a>
         <a class="nav-contact" href="mailto:yindi6917@gmail.com">Get in touch<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
       </nav>
+      <div class="language-switch" id="language-switch" role="group" aria-label="Language / 语言" hidden>
+        <button class="language-option" type="button" data-language="en" lang="en" aria-label="English" aria-pressed="true">EN</button>
+        <button class="language-option" type="button" data-language="zh" lang="zh-CN" aria-label="简体中文" aria-pressed="false">中文</button>
+      </div>
     </div>
   </header>
   <main id="main" class="container">
@@ -404,6 +428,7 @@
         <div><h2 id="publications-title">Selected publications.</h2><p class="section-note">Research in language, vision, and agentic systems · 2025–2026</p></div>
         <div class="publication-count"><strong>14</strong><span>publications</span></div>
       </div>
+      <p class="translation-note" id="pub-translation-note" lang="zh-CN" hidden>中文译名仅供阅读参考，英文原题和会议名称保持不变。</p>
       <div class="publications-toolbar" id="publication-controls" hidden>
         <div class="filters" role="group" aria-label="Filter publications by research area">
           <button class="filter" type="button" data-filter="all" aria-pressed="true" aria-controls="pub-list">All research<span class="filter-count">14</span></button>
@@ -499,13 +524,148 @@
   <script>
     (() => {
       'use strict';
+      let language = 'en';
+      const translationBindings = [];
+      // Capture the current English content once so switching back is lossless.
+      function bindTranslation(selector, chinese, mode = 'text') {
+        document.querySelectorAll(selector).forEach(element => {
+          if (mode === 'node') {
+            const node = [...element.childNodes].find(child => child.nodeType === Node.TEXT_NODE && child.textContent.trim());
+            if (node) translationBindings.push({element:node, mode:'text', en:node.textContent, zh:chinese});
+          } else {
+            translationBindings.push({element, mode, en:mode === 'html' ? element.innerHTML : element.textContent, zh:chinese});
+          }
+        });
+      }
+      [
+        ['.skip-link', '跳转到正文'],
+        ['.brand-caption', '研究与开源'],
+        ['[data-nav="about"]', '关于我'],
+        ['[data-nav="projects"]', '开源项目'],
+        ['[data-nav="publications"]', '学术论文'],
+        ['.hero .role', '专家研究员 · 团队负责人'],
+        ['.focus-list .small-label', '研究方向'],
+        ['.focus-item:nth-of-type(2)', '大语言模型与多模态'],
+        ['.focus-item:nth-of-type(3)', '智能体'],
+        ['.focus-item:nth-of-type(4)', '检索增强生成（RAG）'],
+        ['#about-title', '关于我'],
+        ['#projects-title', '开源项目'],
+        ['#projects .section-note', '从基模到实际应用。'],
+        ['#publications-title', '精选论文'],
+        ['#publications .section-note', '语言、视觉与智能体研究 · 2025–2026'],
+        ['.publication-count > span', '篇论文'],
+        ['.search .sr-only', '搜索论文标题、会议或年份（支持中英文）'],
+        ['#no-results', '未找到匹配论文，请尝试其他关键词或研究类别。'],
+        ['#contact-title', '联系我'],
+        ['.contact-section p', '交流研究、开源项目与值得分享的想法。'],
+        ['.footer-inner > span', '© 2026 尹迪 · 腾讯优图实验室'],
+        ['.footer-right > span', '最后更新：2026 年 10 月']
+      ].forEach(([selector, value]) => bindTranslation(selector, value));
+      [
+        ['.nav-contact', '联系我'],
+        ['.hero-actions .button-primary', '查看我的工作'],
+        ['.hero-actions .button-secondary', '谷歌学术'],
+        ['.profile-links a[href^="mailto:"]', '邮箱'],
+        ['.scroll-cue', '进一步了解'],
+        ['#projects .section-heading .text-link', 'GitHub 主页'],
+        ['[data-filter="all"]', '全部研究'],
+        ['[data-filter="rag"]', 'RAG与智能体'],
+        ['[data-filter="llm"]', '大语言模型'],
+        ['[data-filter="mllm"]', '多模态语言模型'],
+        ['.publication-bottom .text-link', '在谷歌学术查看完整列表'],
+        ['.back-to-top', '返回顶部']
+      ].forEach(([selector, value]) => bindTranslation(selector, value, 'node'));
+      bindTranslation('.hero-description', '我在<strong>腾讯优图实验室</strong>带领团队开展大语言模型、多模态大语言模型、RAG等的研究，通过开源工具与评测基准，推动基础模型走向实际应用。', 'html');
+      bindTranslation('.about-content > p:nth-of-type(1)', '我的研究涵盖<strong>大语言模型架构、多阶段预训练与模型评测</strong>，致力于将基础模型的研究进展转化为实际应用。', 'html');
+      bindTranslation('.about-content > p:nth-of-type(2)', '我主要围绕三个核心方向开展工作：<strong>大语言模型预训练与架构优化</strong>、<strong>智能体（Agent）</strong>和<strong>检索增强生成（RAG）</strong>。我们希望通过可靠的开源工具和评测基准，缩小基础模型与实际应用之间的差距。', 'html');
+      bindTranslation('.current-focus > span', '<span class="current-focus-label">当前研究重点</span>我目前专注于<strong>原生多模态预训练模型</strong>的训练，并探索同时支持<strong>理解与生成</strong>的<strong>统一模型架构</strong>。', 'html');
+      const groupDescriptions = ['模型与多模态理解', '检索、推理与知识'];
+      document.querySelectorAll('#projects .group-description').forEach((element, index) => {
+        if (groupDescriptions[index]) translationBindings.push({element, mode:'text', en:element.textContent, zh:groupDescriptions[index]});
+      });
+      const projectDescriptions = {
+        'Youtu-LLM': '面向边缘部署的轻量级高性能大语言模型，参数规模为 2B。',
+        'Youtu-VL': '视觉语言模型，提供训练方案与推理代码，包括 Youtu-VL-4B 等模型。',
+        'Youtu-Parsing-Omni': '通过单一模型，将文档、图像、图表、几何图形、音频和视频解析为结构化 JSON。',
+        'Youtu-RAG': '基于“本地部署 · 自主决策 · 记忆驱动”范式构建的新一代Agentic RAG系统。',
+        'Youtu-GraphRAG': '基于图模式的纵向统一智能体框架，将各个模块紧密整合，贯通知识构建与检索推理。',
+        'Youtu-Embedding': '由腾讯优图实验室研发、具有行业领先水平的通用文本表示模型。'
+      };
+      const tagNames = {LLM:'大语言模型', MLLM:'多模态大语言模型', Omni:'全模态', Framework:'框架'};
+      document.querySelectorAll('.project-card').forEach(card => {
+        const name = card.querySelector('h4').textContent.trim();
+        const description = card.querySelector('p');
+        if (projectDescriptions[name]) translationBindings.push({element:description, mode:'text', en:description.textContent, zh:projectDescriptions[name]});
+        card.querySelectorAll('.tag').forEach(tag => {
+          const chinese = tagNames[tag.textContent.trim()];
+          if (chinese) translationBindings.push({element:tag, mode:'text', en:tag.textContent, zh:chinese});
+        });
+      });
+      const categoryNames = {rag:'RAG 与智能体', llm:'大语言模型 · LLM', mllm:'多模态大语言模型 · MLLM'};
+      const paperTranslations = {
+        'pub-title-01': 'Youtu-GraphRAG：面向图检索增强复杂推理的纵向统一智能体',
+        'pub-title-02': '从碰撞到认知：面向高效 RAG 的哈希驱动图构建',
+        'pub-title-03': '通过双曲结构化实现查询感知的知识检索',
+        'pub-title-04': 'PoLi-RL：面向条件语义文本相似度的点到列表强化学习框架',
+        'pub-title-05': '通过表征空间分析与编辑增强角色扮演智能体的拒答能力',
+        'pub-title-06': 'Mac-SQL：面向文本转 SQL 的多智能体协作框架',
+        'pub-title-07': 'Youtu-LLM：释放轻量级大语言模型的原生智能体潜能',
+        'pub-title-08': 'TPLA：面向高效预填充与解码分离推理的张量并行潜在注意力',
+        'pub-title-09': 'SSA：通过在特征空间对齐全量与稀疏注意力输出实现稀疏注意力',
+        'pub-title-10': 'HISA：面向细粒度稀疏注意力的高效层次化索引',
+        'pub-title-11': '面向大语言模型自动推理的课程学习方法',
+        'pub-title-12': 'Youtu-VL：通过统一视觉语言监督释放视觉潜能',
+        'pub-title-13': '迈向原生多模态建模：路线图',
+        'pub-title-14': 'TangramPuzzle：通过组合空间推理评估多模态大语言模型'
+      };
+      const translatedPapers = [];
+      document.querySelectorAll('.pub-item').forEach(item => {
+        const heading = item.querySelector('.pub-title');
+        heading.lang = 'en';
+        const chinese = paperTranslations[heading.id];
+        if (chinese) {
+          const translation = document.createElement('p');
+          translation.className = 'pub-translation';
+          translation.lang = 'zh-CN';
+          translation.hidden = true;
+          translation.textContent = chinese;
+          heading.insertAdjacentElement('afterend', translation);
+          translatedPapers.push(translation);
+        }
+        const tag = item.querySelector('.pub-category');
+        translationBindings.push({element:tag, mode:'text', en:tag.textContent, zh:categoryNames[item.dataset.category] || tag.textContent});
+      });
+      const attributeBindings = [
+        ['.brand', 'aria-label', '尹迪的学术主页'],
+        ['.nav-links', 'aria-label', '主导航'],
+        ['.profile-photo img', 'alt', '尹迪（Di Yin）'],
+        ['.profile-links', 'aria-label', '学术主页与联系方式'],
+        ['.filters', 'aria-label', '按研究方向筛选论文'],
+        ['#pub-search', 'placeholder', '搜索论文、会议或年份…'],
+        ['#copy-email', 'aria-label', '复制邮箱地址'],
+        ['#copy-email', 'title', '复制邮箱地址'],
+        ['meta[name="description"]', 'content', '尹迪（Di Yin），腾讯优图实验室专家研究员、团队负责人。研究方向包括大语言模型、多模态智能、智能体与检索增强生成。']
+      ].map(([selector, attribute, zh]) => {
+        const element = document.querySelector(selector);
+        return element ? {element, attribute, en:element.getAttribute(attribute), zh} : null;
+      }).filter(Boolean);
+      const englishTitle = document.title;
+      const languageButtons = [...document.querySelectorAll('[data-language]')];
       const buttons = [...document.querySelectorAll('[data-filter]')];
       const items = [...document.querySelectorAll('.pub-item')];
       const search = document.getElementById('pub-search');
       const count = document.getElementById('results-count');
       const empty = document.getElementById('no-results');
       let category = 'all';
-      const searchable = new Map(items.map(item => [item, [item.querySelector('.pub-title').textContent, item.querySelector('.pub-category').textContent, item.querySelector('.venue-badge').textContent, item.querySelector('.pub-year').textContent].join(' ').toLowerCase()]));
+      // Index both languages once; search and the active filter survive a language change.
+      const searchable = new Map(items.map(item => [item, [
+        item.querySelector('.pub-title').textContent,
+        paperTranslations[item.querySelector('.pub-title').id] || '',
+        item.querySelector('.pub-category').textContent,
+        categoryNames[item.dataset.category] || '',
+        item.querySelector('.venue-badge').textContent,
+        item.querySelector('.pub-year').textContent
+      ].join(' ').toLowerCase()]));
       function applyFilters() {
         const terms = search.value.trim().toLowerCase().split(/\s+/).filter(Boolean);
         let visible = 0;
@@ -514,7 +674,9 @@
           item.hidden = !matches;
           if (matches) visible++;
         });
-        count.textContent = `Showing ${visible} of ${items.length} publications`;
+        count.textContent = language === 'zh'
+          ? `显示 ${visible} / ${items.length} 篇论文`
+          : `Showing ${visible} of ${items.length} publications`;
         empty.hidden = visible > 0;
       }
       buttons.forEach(button => button.addEventListener('click', () => {
@@ -542,12 +704,48 @@
       updateNavigation();
       const toast = document.getElementById('toast');
       let toastTimeout;
-      function notify(message) {
+      let toastMessages = null;
+      function notify(messages) {
         clearTimeout(toastTimeout);
-        toast.textContent = message;
+        toastMessages = messages;
+        toast.textContent = messages[language];
         toast.classList.add('visible');
-        toastTimeout = setTimeout(() => toast.classList.remove('visible'), 4000);
+        toastTimeout = setTimeout(() => {
+          toast.classList.remove('visible');
+          toastMessages = null;
+        }, 4000);
       }
+      function setLanguage(nextLanguage) {
+        if (nextLanguage !== 'en' && nextLanguage !== 'zh') return;
+        language = nextLanguage;
+        translationBindings.forEach(binding => {
+          if (binding.mode === 'html') binding.element.innerHTML = binding[language];
+          else binding.element.textContent = binding[language];
+        });
+        attributeBindings.forEach(binding => {
+          const value = binding[language];
+          if (value === null) binding.element.removeAttribute(binding.attribute);
+          else binding.element.setAttribute(binding.attribute, value);
+        });
+        document.documentElement.lang = language === 'zh' ? 'zh-CN' : 'en';
+        document.title = language === 'zh' ? '尹迪 · 学术研究与开源项目' : englishTitle;
+        translatedPapers.forEach(translation => { translation.hidden = language !== 'zh'; });
+        document.getElementById('pub-translation-note').hidden = language !== 'zh';
+        languageButtons.forEach(button => {
+          button.setAttribute('aria-pressed', String(button.dataset.language === language));
+        });
+        if (toastMessages) toast.textContent = toastMessages[language];
+        applyFilters();
+        updateNavigation();
+      }
+      languageButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          if (button.dataset.language !== language) setLanguage(button.dataset.language);
+        });
+      });
+      // Always open in English, regardless of browser language or previous visits.
+      document.getElementById('language-switch').hidden = false;
+      setLanguage('en');
       const copyButton = document.getElementById('copy-email');
       copyButton.hidden = false;
       copyButton.addEventListener('click', async () => {
@@ -565,7 +763,9 @@
           field.remove();
           copyButton.focus({preventScroll:true});
         }
-        notify(copied ? 'Email address copied.' : 'Please copy the address: ' + email);
+        notify(copied
+          ? {en:'Email address copied.', zh:'邮箱地址已复制。'}
+          : {en:'Please copy the address: ' + email, zh:'请手动复制邮箱地址：' + email});
       });
     })();
   </script>
