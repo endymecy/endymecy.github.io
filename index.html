@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DI YIN (尹迪) - Academic Homepage</title>
+    <style>
+        :root {
+            --primary-color: #0366d6;
+            --text-color: #24292e;
+            --light-bg: #f6f8fa;
+            --border-color: #e1e4e8;
+            --tag-bg: #f1f8ff;
+            --tag-text: #0366d6;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Header Section */
+        .profile-header {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 30px;
+            margin-bottom: 30px;
+        }
+
+        .profile-avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--border-color);
+        }
+
+        .profile-info h1 {
+            margin: 0 0 10px 0;
+            font-size: 2rem;
+        }
+
+        .profile-info p {
+            margin: 5px 0;
+            color: #586069;
+        }
+
+        .social-links {
+            margin-top: 10px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .social-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Section Headings */
+        h2 {
+            font-size: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 8px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            margin-top: 25px;
+        }
+
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .project-card {
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 20px;
+            background: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: box-shadow 0.2s ease;
+        }
+
+        .project-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        .project-card h4 {
+            margin: 0 0 10px 0;
+            font-size: 1.1rem;
+        }
+
+        .project-card h4 a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .project-card h4 a:hover {
+            text-decoration: underline;
+        }
+
+        .project-card p {
+            font-size: 0.9rem;
+            color: #586069;
+            margin: 0 0 15px 0;
+        }
+
+        .project-tags {
+            display: flex;
+            gap: 8px;
+        }
+
+        .tag {
+            background-color: var(--tag-bg);
+            color: var(--tag-text);
+            font-size: 0.75rem;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-weight: 500;
+        }
+
+        /* Publications List */
+        .pub-list {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        .pub-list li {
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+        }
+
+        .pub-badge {
+            background-color: #fff5eb;
+            color: #bc4c00;
+            font-size: 0.75rem;
+            padding: 2px 6px;
+            border-radius: 4px;
+            margin-left: 6px;
+            font-weight: 500;
+            border: 1px solid #ffd8be;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 50px;
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px;
+            font-size: 0.85px;
+            color: #586069;
+            text-align: center;
+        }
+
+        @media (max-width: 600px) {
+            .profile-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            .social-links {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="profile-header">
+        <!-- Replace 'avatar.jpg' with your photo link or local path -->
+        <img src="https://scholar.googleusercontent.com/citations?view_op=medium_photo&user=wY7HV2gAAAAJ&citpid=1" alt="DI YIN" class="profile-avatar">
+        <div class="profile-info">
+            <h1>DI YIN (尹迪)</h1>
+            <p>Principal Researcher & Team Leader</p>
+            <p><strong>Tencent Youtu Lab</strong></p>
+            <div class="social-links">
+                <a href="mailto:endymecy@sina.cn">Email</a>
+                <a href="https://scholar.google.com/citations?user=wY7HV2gAAAAJ&hl=zh-CN" target="_blank">Google Scholar</a>
+                <a href="https://huggingface.co/DIYIN" target="_blank">HuggingFace</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Me Section -->
+    <section>
+        <h2>About Me</h2>
+        <p>I am a Principal Researcher and Team Lead at Tencent Youtu Lab. My research interests lie in the area of deep learning and its applications in natural language processing and computer vision, where my work has accumulated over 1400 Google Scholar citations.</p>
+        <p>I dedicate my effort to three core pillars: <strong>Large Language Models (LLM)</strong>, <strong>Agent</strong>, and <strong>Retrieval-Augmented Generation (RAG)</strong>. We aim to bridge the gap between foundation models and real-world applications through robust, open-source tools and benchmarks.</p>
+    </section>
+
+    <!-- Open Source Projects Section -->
+    <section>
+        <h2>Open Source Projects</h2>
+        <p>We are actively building the <a href="https://github.com/TencentCloudADP" style="color: var(--primary-color); text-decoration: none;">TencentCloudADP</a> ecosystem.</p>
+
+        <h3>LLM</h3>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div>
+                    <h4><a href="https://huggingface.co/tencent/Youtu-LLM-2B">Youtu-LLM</a></h4>
+                    <p>Lightweight, high-performance Large Language Models (2B parameters) for edge deployment.</p>
+                </div>
+                <div class="project-tags">
+                    <span class="tag">LLM</span>
+                    <span class="tag">HuggingFace</span>
+                </div>
+            </div>
+            <div class="project-card">
+                <div>
+                    <h4><a href="https://huggingface.co/tencent/Youtu-VL-4B-Instruct">Youtu-VL</a></h4>
+                    <p>Open-source Vision-Language models including training recipes and inference code (e.g., Youtu-VL-4B).</p>
+                </div>
+                <div class="project-tags">
+                    <span class="tag">MLLM</span>
+                    <span class="tag">HuggingFace</span>
+                </div>
+            </div>
+             <div class="project-card">
+                <div>
+                    <h4><a href="https://huggingface.co/tencent/Youtu-Parsing-Omni">Youtu-Parsing-Omni</a></h4>
+                    <p>One model that parses documents, images, charts, geometry, audio and video into structured JSON.</p>
+                </div>
+                <div class="project-tags">
+                    <span class="tag">Omni</span>
+                    <span class="tag">HuggingFace</span>
+                </div>
+            </div>           
+        </div>
+
+        <h3>RAG</h3>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div>
+                    <h4><a href="https://github.com/TencentCloudADP/youtu-rag">Youtu-RAG</a></h4>
+                    <p>A next-generation agentic retrieval-augmented generation system built on the "Local Deployment · Autonomous Decision · Memory-Driven" paradigm.</p>
+                </div>
+                <div class="project-tags">
+                    <span class="tag">Framework</span>
+                    <span class="tag">GitHub</span>
+                </div>
+            </div>
+            <div class="project-card">
+                <div>
+                    <h4><a href="https://github.com/TencentCloudADP/youtu-graphrag">Youtu-GraphRAG</a></h4>
+                    <p>A vertically unified agentic paradigm that jointly connects the entire framework as an intricate integration based on graph schema.</p>
+                </div>
+                <div class="project-tags">
+                    <span class="tag">Framework</span>
+                    <span class="tag">GitHub</span>
+                </div>
+            </div>
+            <div class="project-card">
+                <div>
+                    <h4><a href="https://github.com/TencentCloudADP/youtu-embedding">Youtu-Embedding</a></h4>
+                    <p>An industry-leading, general-purpose text representation model developed by Tencent Youtu Lab.</p>
+                </div>
+                <div class="project-tags">
+                    <span class="tag">Framework</span>
+                    <span class="tag">GitHub</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Selected Publications Section -->
+    <section>
+        <h2>Selected publications from the past two years</h2>
+        <p>Full list available on <a href="https://scholar.google.com/citations?user=wY7HV2gAAAAJ&hl=zh-CN" style="color: var(--primary-color);">Google Scholar</a>.</p>
+
+        <h3>RAG & Agent</h3>
+        <ul class="pub-list">
+            <li><em>Youtu-GraphRAG: Vertically Unified Agents for Graph Retrieval-Augmented Complex Reasoning</em> — <strong>ICLR 2026</strong></li>
+            <li><em>Collision to Cognition: Hash-Driven Graph Construction for Efficient RAG</em> — <strong>ACL 2026</strong></li>
+            <li><em>Query-Aware Knowledge Retrieval via Hyperbolic Structuring</em> — <strong>ACL 2026</strong></li>
+            <li><em>PoLi-RL: A Point-to-List Reinforcement Learning Framework for Conditional Semantic Textual Similarity</em> — <strong>ICLR 2026</strong></li>
+            <li><em>Enhancing Refusal Capabilities of Role-Playing Agents via Representation Space Analysis and Editing</em> — <strong>ACL 2025</strong></li>
+            <li><em>Mac-SQL: A Multi-Agent Collaborative Framework for Text-to-SQL</em> — <strong>COLING 2025</strong></li>
+        </ul>
+
+        <h3>LLM</h3>
+        <ul class="pub-list">
+            <li><em>Youtu-LLM: Unlocking the Native Agentic Potential for Lightweight Large Language Models</em> — <strong>Arxiv 2026</strong></li>
+            <li><em>TPLA: Tensor Parallel Latent Attention for Efficient Disaggregated Prefill and Decode Inference</em> — <strong>ASPLOS 2026</strong></li>
+            <li><em>SSA: Sparse Sparse Attention by Aligning Full and Sparse Attention Outputs in Feature Space</em> — <strong>ICML 2026</strong></li>
+            <li><em>HISA: Efficient Hierarchical Indexing for Fine-Grained Sparse Attention</em> — <strong>CoLM 2026</strong></li>
+            <li><em>A Curriculum Learning Approach to Automated Reasoning with Large Language Models</em> — <strong>ACL 2025</strong></li>
+        </ul>
+
+        <h3>MLLM</h3>
+        <ul class="pub-list">
+            <li><em>Youtu-VL: Unleashing Visual Potential via Unified Vision-Language Supervision</em> — <strong>Arxiv 2026</strong></li>
+            <li><em>Toward Native Multimodal Modeling: A Roadmap</em> — <strong>EMNLP 2026</strong></li>
+            <li><em>TangramPuzzle: Evaluating Multimodal Large Language Models with Compositional Spatial Reasoning</em> — <strong>EMNLP 2026</strong></li>
+        </ul>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2026 DI YIN. Last updated: Oct 2026.
+    </footer>
+
+</body>
+</html>
