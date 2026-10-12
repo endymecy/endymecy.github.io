@@ -1,0 +1,1 @@
+I am a Principal Researcher and Team Lead at Tencent Youtu Lab. My research interests lie in the area of deep learning and its applications in natural language processing and computer vision, where my work has accumulated over 10,000 Google Scholar citations
