@@ -268,6 +268,13 @@
     @media screen{.hero h1{font-size:clamp(32px,4vw,48px)}}
     #about.about-layout{grid-template-columns:minmax(0,1fr);gap:24px}
     #about .about-content{min-width:0;width:100%}
+    .research-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin:20px 0 0;padding:10px 0;border:0;border-radius:0;background:transparent}
+    .research-stat{display:flex;flex-direction:column;gap:5px;min-width:0;padding:0 20px}
+    .research-stat+.research-stat{border-left:1px solid var(--line)}
+    .research-stat dt{font-size:13px;line-height:1.65;font-weight:400;color:var(--muted);overflow-wrap:anywhere}
+    .research-stat dd{order:-1;margin:0;font-family:var(--sans);font-size:18px;line-height:1.35;font-weight:500;letter-spacing:-.02em;font-variant-numeric:tabular-nums;color:var(--muted)}
+    @media(max-width:580px){.research-stats{margin-top:18px;padding:8px 0}.research-stat{gap:4px;padding:0 11px}.research-stat dt{font-size:12px}.research-stat dd{font-size:16px}}
+    @media(max-width:360px){.research-stat{padding:0 9px}.research-stat dd{font-size:16px}}
     #about .current-focus{gap:17px;margin-top:26px;padding:24px 26px;border:1px solid #b9cebb;border-left:4px solid #487452;border-radius:10px;background:#eaf2e6;color:#314c36;font-size:15px;font-weight:500;line-height:1.85;box-shadow:0 5px 18px rgba(47,77,48,.04)}
     #about .current-focus>.icon{width:22px;height:22px;margin-top:3px;color:#487452}
     #about .current-focus>span{min-width:0}
@@ -370,8 +377,13 @@
         <h2 id="about-title">A little about me.</h2>
       </div>
       <div class="about-content">
-        <p>My research spans <strong>model architecture optimization, native multimodal pre-train, and evaluation of large language models</strong>, with a focus on connecting advances in foundation models to practical applications.</p>
+        <p>My research spans <strong>model architectures, multi-stage training, and evaluation of large language models</strong>, with a focus on connecting advances in foundation models to practical applications.</p>
         <p>I dedicate my effort to three core pillars: <strong>Pre-training and architecture optimization of LLM</strong>, <strong>Agent</strong>, and <strong>RAG</strong>. We aim to bridge the gap between foundation models and real-world applications through robust, open-source tools and benchmarks.</p>
+        <dl class="research-stats" aria-label="Research and open-source impact">
+          <div class="research-stat"><dt data-stat-label="papers">Papers published</dt><dd>60+</dd></div>
+          <div class="research-stat"><dt data-stat-label="citations">Google Scholar citations</dt><dd>1,400+</dd></div>
+          <div class="research-stat"><dt data-stat-label="stars">Personal GitHub stars</dt><dd>6,000+</dd></div>
+        </dl>
         <p class="current-focus"><svg class="icon" aria-hidden="true"><use href="#i-spark"/></svg><span><span class="current-focus-label">Current research focus</span>My current work focuses on the training of <strong>native multimodal pre-trained models</strong> and the exploration of <strong>unified model architectures</strong> for both <strong>understanding and generation</strong>.</span></p>
       </div>
     </section>
@@ -549,6 +561,9 @@
         ['.focus-item:nth-of-type(3)', '智能体'],
         ['.focus-item:nth-of-type(4)', '检索增强生成（RAG）'],
         ['#about-title', '关于我'],
+        ['[data-stat-label="papers"]', '发表论文'],
+        ['[data-stat-label="citations"]', '谷歌学术引用'],
+        ['[data-stat-label="stars"]', '个人 GitHub Star'],
         ['#projects-title', '开源项目'],
         ['#projects .section-note', '从基模到实际应用。'],
         ['#publications-title', '精选论文'],
@@ -576,7 +591,7 @@
         ['.back-to-top', '返回顶部']
       ].forEach(([selector, value]) => bindTranslation(selector, value, 'node'));
       bindTranslation('.hero-description', '我在<strong>腾讯优图实验室</strong>带领团队开展大语言模型、多模态大语言模型、RAG等的研究，通过开源工具与评测基准，推动基础模型走向实际应用。', 'html');
-      bindTranslation('.about-content > p:nth-of-type(1)', '我的研究涵盖<strong>大语言模型架构优化、原生多模态大语言模型预训练、模型评测</strong>等方面，致力于将基础模型的研究进展转化为实际应用。', 'html');
+      bindTranslation('.about-content > p:nth-of-type(1)', '我的研究涵盖<strong>大语言模型架构、多阶段预训练与模型评测</strong>，致力于将基础模型的研究进展转化为实际应用。', 'html');
       bindTranslation('.about-content > p:nth-of-type(2)', '我主要围绕三个核心方向开展工作：<strong>大语言模型预训练与架构优化</strong>、<strong>智能体（Agent）</strong>和<strong>检索增强生成（RAG）</strong>。我们希望通过可靠的开源工具和评测基准，缩小基础模型与实际应用之间的差距。', 'html');
       bindTranslation('.current-focus > span', '<span class="current-focus-label">当前研究重点</span>我目前专注于<strong>原生多模态预训练模型</strong>的训练，并探索同时支持<strong>理解与生成</strong>的<strong>统一模型架构</strong>。', 'html');
       const groupDescriptions = ['模型与多模态理解', '检索、推理与知识'];
@@ -641,6 +656,7 @@
         ['.profile-photo img', 'alt', '尹迪（Di Yin）'],
         ['.profile-links', 'aria-label', '学术主页与联系方式'],
         ['.filters', 'aria-label', '按研究方向筛选论文'],
+        ['.research-stats', 'aria-label', '学术与开源成果'],
         ['#pub-search', 'placeholder', '搜索论文、会议或年份…'],
         ['#copy-email', 'aria-label', '复制邮箱地址'],
         ['#copy-email', 'title', '复制邮箱地址'],
