@@ -268,6 +268,12 @@
     @media screen{.hero h1{font-size:clamp(32px,4vw,48px)}}
     #about.about-layout{grid-template-columns:minmax(0,1fr);gap:24px}
     #about .about-content{min-width:0;width:100%}
+    #about .current-focus{gap:17px;margin-top:26px;padding:24px 26px;border:1px solid #b9cebb;border-left:4px solid #487452;border-radius:10px;background:#eaf2e6;color:#314c36;font-size:15px;font-weight:500;line-height:1.85;box-shadow:0 5px 18px rgba(47,77,48,.04)}
+    #about .current-focus>.icon{width:22px;height:22px;margin-top:3px;color:#487452}
+    #about .current-focus>span{min-width:0}
+    #about .current-focus-label{display:block;margin-bottom:10px;font-size:12px;font-weight:750;line-height:1.6;letter-spacing:.09em;text-transform:uppercase;color:#45664b}
+    #about .current-focus strong{font-weight:750;color:#23432b}
+    @media(max-width:580px){#about .current-focus{padding:20px 18px;gap:12px;font-size:14px;line-height:1.8}#about .current-focus>.icon{width:19px;height:19px}#about .current-focus-label{font-size:11px;letter-spacing:.07em}}
     @media(max-width:580px){#about.about-layout{gap:20px}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}}
     @media print{body{background:#fff;font-size:11px}.container{width:100%}.site-header,.research-art,.hero-actions,.hero-bottom,.publications-toolbar,.copy-email,.back-to-top,.toast{display:none!important}.hero{display:block;padding:12px 0 25px}h1{font-size:55px}.hero-description{max-width:none}.section{padding:24px 0}.section-heading{margin-bottom:16px}.about-layout{grid-template-columns:160px 1fr}.projects-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.project-card{break-inside:avoid;box-shadow:none;padding:14px}.pub-item{break-inside:avoid;padding:10px 0}.pub-item[hidden]{display:grid!important}.pub-title{font-size:11px}.empty-state{display:none!important}.contact-section{padding:24px 0}.contact-actions .button{background:transparent;color:var(--ink)}footer{padding:14px 0}a[href^="http"]{text-decoration:none}}
@@ -342,7 +348,7 @@
       <div class="about-content">
         <p>My research spans <strong>model architectures, multi-stage training, and evaluation of large language models</strong>, with a focus on connecting advances in foundation models to practical applications.</p>
         <p>I dedicate my effort to three core pillars: <strong>Pre-training and architecture optimization of LLM</strong>, <strong>Agent</strong>, and <strong>RAG</strong>. We aim to bridge the gap between foundation models and real-world applications through robust, open-source tools and benchmarks.</p>
-        <p class="current-focus"><svg class="icon" aria-hidden="true"><use href="#i-spark"/></svg><span>My current work focuses on the training of <strong>native multimodal pre-trained models</strong> and the exploration of <strong>unified model architectures</strong> for both understanding and generation.</span></p>
+        <p class="current-focus"><svg class="icon" aria-hidden="true"><use href="#i-spark"/></svg><span><span class="current-focus-label">Current research focus</span>My current work focuses on the training of <strong>native multimodal pre-trained models</strong> and the exploration of <strong>unified model architectures</strong> for both <strong>understanding and generation</strong>.</span></p>
       </div>
     </section>
     <section id="projects" class="section" aria-labelledby="projects-title">
