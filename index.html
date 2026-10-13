@@ -222,7 +222,7 @@
     .hero-description{width:100%;max-width:none;margin:18px 0 22px;font-size:15px;line-height:1.85}
     .hero-description strong{font-weight:600;color:var(--ink)}
     .hero .profile-links{margin-top:17px;gap:22px}
-    .profile-photo{margin:0;width:100%;max-width:184px;justify-self:start;align-self:center;padding:6px;border:1px solid var(--line);border-radius:12px;background:var(--white);box-shadow:0 8px 24px rgba(32,46,41,.04)}
+    .profile-photo{margin:0;width:85%;max-width:184px;justify-self:center;align-self:center;padding:6px;border:1px solid var(--line);border-radius:12px;background:var(--white);box-shadow:0 8px 24px rgba(32,46,41,.04)}
     .profile-photo img{display:block;width:100%;height:auto;object-fit:contain;border-radius:7px;color:var(--muted);font-size:14px}
     .hero-bottom{padding:18px 0}
     .focus-list{gap:12px 22px}
@@ -307,6 +307,14 @@
     @media(max-width:1100px){.site-header .brand-caption,.site-header .brand-divider{display:none}.site-header .nav-links{gap:19px}}
     @media(max-width:760px){.site-header .nav-inner{gap:16px}.site-header .nav-links{gap:16px}.language-option{min-width:36px;padding-inline:7px}.site-header .nav-contact{display:none}}
     @media(max-width:640px){html{scroll-padding-top:128px}.site-header .nav-inner{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px 12px;height:auto;min-height:105px;padding:12px 0 6px}.site-header .brand{grid-column:1;grid-row:1;justify-self:start}.language-switch{grid-column:2;grid-row:1}.site-header .nav-links{grid-column:1 / -1;grid-row:2;margin-left:0;justify-content:flex-start;gap:27px;min-width:0}.site-header .nav-links a{font-size:12px;min-height:34px;display:inline-flex;align-items:center}.site-header .nav-links .nav-contact{display:none}.site-header .nav-links a[aria-current="location"]:after{bottom:0}html[lang="zh-CN"] h2,html[lang="zh-CN"] #about h2{font-size:25px}.translation-note{margin:-5px 0 17px}.search input{font-size:16px}html[lang="zh-CN"] #pub-search{font-size:16px}}
+    /* Compact visitor badge; allow footer controls to wrap on small screens. */
+    .footer-inner{flex-wrap:wrap}
+    .footer-right{flex-wrap:wrap;row-gap:10px}
+    .visitor-badge{display:inline-flex;align-items:center;justify-content:center;min-height:28px;min-width:100px;max-width:100%;border-radius:4px}
+    .visitor-badge img{display:block;height:20px;width:auto;max-width:100%}
+    .visitor-fallback{padding:3px 8px;border:1px solid var(--line);border-radius:4px;background:var(--soft);color:var(--muted);font-size:11px;line-height:1.6}
+    @media(max-width:580px){.footer-right{justify-content:center;gap:10px 16px}}
+    @media print{.visitor-badge{display:none!important}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}}
     @media print{body{background:#fff;font-size:11px}.container{width:100%}.site-header,.research-art,.hero-actions,.hero-bottom,.publications-toolbar,.copy-email,.back-to-top,.toast{display:none!important}.hero{display:block;padding:12px 0 25px}h1{font-size:55px}.hero-description{max-width:none}.section{padding:24px 0}.section-heading{margin-bottom:16px}.about-layout{grid-template-columns:160px 1fr}.projects-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.project-card{break-inside:avoid;box-shadow:none;padding:14px}.pub-item{break-inside:avoid;padding:10px 0}.pub-item[hidden]{display:grid!important}.pub-title{font-size:11px}.empty-state{display:none!important}.contact-section{padding:24px 0}.contact-actions .button{background:transparent;color:var(--ink)}footer{padding:14px 0}a[href^="http"]{text-decoration:none}}
   </style>
@@ -361,7 +369,7 @@
           <h1 id="hero-name">Di Yin<span class="chinese-name" lang="zh-CN">尹迪</span></h1>
           <p class="role">Expert Researcher & Team Leader</p>
         </div>
-        <p class="hero-description">I lead research at <strong>Tencent Youtu Lab</strong>, exploring large language models, multimodal intelligence, and agentic systems. My work bridges foundation models and real-world applications through open-source tools and benchmarks.</p>
+        <p class="hero-description">I lead research at <strong>Tencent Youtu Lab</strong>, exploring large language models, multimodal intelligence, and agentic systems.</p>
         <div class="hero-actions">
           <a class="button button-primary" href="#projects">Explore my work<svg class="icon" aria-hidden="true"><use href="#i-right"/></svg></a>
           <a class="button button-secondary" href="https://scholar.google.com/citations?user=wY7HV2gAAAAJ&hl=zh-CN" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-scholar"/></svg>Google Scholar<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
@@ -568,7 +576,20 @@
       <div class="contact-actions"><a class="button button-secondary" href="mailto:yindi6917@gmail.com"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg>yindi6917@gmail.com<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a><button class="copy-email" id="copy-email" type="button" aria-label="Copy email address" title="Copy email address" hidden><svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg></button></div>
     </section>
   </main>
-  <footer><div class="container footer-inner"><span>© 2026 Di Yin · Tencent Youtu Lab</span><div class="footer-right"><span>Last updated: October 2026</span><a class="back-to-top" href="#top">Back to top<svg class="icon" aria-hidden="true"><use href="#i-up"/></svg></a></div></div></footer>
+  <footer>
+    <div class="container footer-inner">
+      <span>© 2026 Di Yin · Tencent Youtu Lab</span>
+      <div class="footer-right">
+        <span>Last updated: October 2026</span>
+        <!-- Stable public counter key: keep it unchanged across deployments and language switches. -->
+        <a class="visitor-badge" href="https://visitorbadge.io/status?path=endymecy%2Fdi-yin-academic-homepage" target="_blank" rel="noopener noreferrer" aria-label="View visitor statistics on visitorbadge.io" title="Cumulative page hits via visitorbadge.io; not unique visitors">
+          <img id="visitor-badge-img" src="https://api.visitorbadge.io/api/visitors?path=endymecy%2Fdi-yin-academic-homepage&amp;label=Visitors&amp;labelColor=%23eaf0e8&amp;countColor=%23d7e5da&amp;style=flat" alt="Visitors — cumulative page hits" height="20" loading="eager" decoding="async" referrerpolicy="no-referrer">
+          <span class="visitor-fallback" hidden>Visitor statistics unavailable</span>
+        </a>
+        <a class="back-to-top" href="#top">Back to top<svg class="icon" aria-hidden="true"><use href="#i-up"/></svg></a>
+      </div>
+    </div>
+  </footer>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
   <script>
     (() => {
@@ -612,7 +633,8 @@
         ['#contact-title', '联系我'],
         ['.contact-section p', '交流研究、开源项目与值得分享的想法。'],
         ['.footer-inner > span', '© 2026 尹迪 · 腾讯优图实验室'],
-        ['.footer-right > span', '最后更新：2026 年 10 月']
+        ['.footer-right > span', '最后更新：2026 年 10 月'],
+        ['.visitor-fallback', '访问统计暂不可用']
       ].forEach(([selector, value]) => bindTranslation(selector, value));
       [
         ['.nav-contact', '联系我'],
@@ -629,7 +651,7 @@
         ['.publication-bottom .text-link', '在谷歌学术查看完整列表'],
         ['.back-to-top', '返回顶部']
       ].forEach(([selector, value]) => bindTranslation(selector, value, 'node'));
-      bindTranslation('.hero-description', '我在<strong>腾讯优图实验室</strong>带领团队开展大语言模型、多模态大语言模型、RAG等的研究，通过开源工具与评测基准，推动基础模型走向实际应用。', 'html');
+      bindTranslation('.hero-description', '我在<strong>腾讯优图实验室</strong>带领团队开展大语言模型、多模态大语言模型、RAG等的研究。', 'html');
       bindTranslation('.about-content > p:nth-of-type(1)', '我的研究涵盖<strong>大语言模型架构优化、原生多模态预训练、模型评测</strong>等方面，致力于将基础模型的研究进展转化为实际应用。带领团队完成了<strong>120B-A7B</strong>以及<strong>30B-A3B</strong>两款模型的原生多模态预训练工作。', 'html');
       bindTranslation('.about-content > p:nth-of-type(2)', '我主要围绕三个核心方向开展工作：<strong>大语言模型预训练与架构优化</strong>、<strong>智能体（Agent）</strong>和<strong>检索增强生成（RAG）</strong>。我们希望通过可靠的开源工具和评测基准，缩小基础模型与实际应用之间的差距。', 'html');
       bindTranslation('.current-focus > span', '<span class="current-focus-label">当前研究重点</span>我目前专注于<strong>原生多模态预训练模型</strong>的训练，并探索同时支持<strong>理解与生成</strong>的<strong>统一模型架构</strong>。', 'html');
@@ -677,6 +699,9 @@
         ['#pub-search', 'placeholder', '搜索论文、会议或年份…'],
         ['#copy-email', 'aria-label', '复制邮箱地址'],
         ['#copy-email', 'title', '复制邮箱地址'],
+        ['.visitor-badge', 'aria-label', '在 visitorbadge.io 查看访问统计'],
+        ['.visitor-badge', 'title', '由 visitorbadge.io 提供的累计访问次数，非独立访客人数'],
+        ['#visitor-badge-img', 'alt', 'Visitors — 累计访问次数'],
         ['meta[name="description"]', 'content', '尹迪（Di Yin），腾讯优图实验室专家研究员、团队负责人。研究方向包括大语言模型、多模态智能、智能体与检索增强生成。']
       ].map(([selector, attribute, zh]) => {
         const element = document.querySelector(selector);
@@ -778,6 +803,19 @@
       // Always open in English, regardless of browser language or previous visits.
       document.getElementById('language-switch').hidden = false;
       setLanguage('en');
+      // One image request per page load; never reload the counter when changing language.
+      const visitorImage = document.getElementById('visitor-badge-img');
+      const visitorFallback = document.querySelector('.visitor-fallback');
+      if (visitorImage && visitorFallback) {
+        const updateVisitorState = () => {
+          const failed = visitorImage.complete && visitorImage.naturalWidth === 0;
+          visitorImage.hidden = failed;
+          visitorFallback.hidden = !failed;
+        };
+        visitorImage.addEventListener('load', updateVisitorState);
+        visitorImage.addEventListener('error', updateVisitorState);
+        if (visitorImage.complete) updateVisitorState();
+      }
       const copyButton = document.getElementById('copy-email');
       copyButton.hidden = false;
       copyButton.addEventListener('click', async () => {
