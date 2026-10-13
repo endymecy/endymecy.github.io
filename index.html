@@ -244,6 +244,9 @@
     /* Emphasize publication venue and research area without changing metadata. */
     #publications .pub-item{grid-template-columns:34px minmax(0,1fr) 116px;gap:22px;padding:24px 0}
     #publications .pub-title{line-height:1.75;font-weight:550}
+    #publications .pub-summary{margin:8px 0 0;font-size:13px;line-height:1.8;color:var(--muted);font-weight:400;overflow-wrap:anywhere}
+    html[lang="zh-CN"] #publications .pub-summary{line-height:1.9}
+    @media print{#publications .pub-summary{font-size:10px;line-height:1.6;margin-top:4px}}
     #publications .pub-title a{color:#294e41;text-decoration:underline;text-decoration-color:#becfc2;text-decoration-thickness:1px;text-underline-offset:4px;transition:color .2s,text-decoration-color .2s}
     #publications .pub-title a:hover{color:#183c2d;text-decoration-color:currentColor}
     #publications .pub-meta{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:12px}
@@ -452,108 +455,108 @@
           <button class="filter" type="button" data-filter="rag" aria-pressed="false" aria-controls="pub-list">RAG & Agent<span class="filter-count">6</span></button>
           <button class="filter" type="button" data-filter="evaluate" aria-pressed="false" aria-controls="pub-list">Evaluate<span class="filter-count">4</span></button>
         </div>
-        <label class="search"><svg class="icon" aria-hidden="true"><use href="#i-search"/></svg><span class="sr-only">Search publication titles, venues, or years</span><input type="search" id="pub-search" placeholder="Search publications…" autocomplete="off" aria-controls="pub-list"></label>
+        <label class="search"><svg class="icon" aria-hidden="true"><use href="#i-search"/></svg><span class="sr-only">Search publication titles, summaries, research areas, venues, or years</span><input type="search" id="pub-search" placeholder="Search publications…" autocomplete="off" aria-controls="pub-list"></label>
       </div>
       <!-- arXiv title/author matches checked on 2026-10-12. Keep unverified entries unlinked; retain original display titles and venues. -->
       <ol class="pub-list" id="pub-list">
         <li class="pub-item" data-category="llm">
           <span class="pub-number" aria-hidden="true">01</span>
-          <div><h3 class="pub-title" id="pub-title-07">Youtu-LLM: Unlocking the Native Agentic Potential for Lightweight Large Language Models</h3><div class="pub-meta"><span class="pub-category">LLM</span><a class="arxiv-link" href="https://arxiv.org/abs/2512.24618" target="_blank" rel="noopener noreferrer" aria-describedby="pub-title-07">arXiv <span aria-hidden="true">↗</span></a></div></div>
+          <div><h3 class="pub-title" id="pub-title-07">Youtu-LLM: Unlocking the Native Agentic Potential for Lightweight Large Language Models</h3><p class="pub-summary" data-summary-zh="通过分阶段课程预训练与合成轨迹中期训练，为轻量语言模型培养原生推理、规划和工具使用能力。">Builds native reasoning and planning into a lightweight language model through staged pre-training and agentic mid-training on synthetic trajectories.</p><div class="pub-meta"><span class="pub-category">LLM</span><a class="arxiv-link" href="https://arxiv.org/abs/2512.24618" target="_blank" rel="noopener noreferrer" aria-describedby="pub-title-07">arXiv <span aria-hidden="true">↗</span></a></div></div>
           <div class="pub-venue"><span class="venue-badge preprint">arXiv</span><span class="pub-year">2026</span></div>
         </li>
         <li class="pub-item" data-category="llm">
           <span class="pub-number" aria-hidden="true">02</span>
-          <div><h3 class="pub-title" id="pub-title-08">TPLA: Tensor Parallel Latent Attention for Efficient Disaggregated Prefill and Decode Inference</h3><div class="pub-meta"><span class="pub-category">LLM</span><a class="arxiv-link" href="https://arxiv.org/abs/2508.15881" target="_blank" rel="noopener noreferrer" aria-describedby="pub-title-08">arXiv <span aria-hidden="true">↗</span></a></div></div>
+          <div><h3 class="pub-title" id="pub-title-08">TPLA: Tensor Parallel Latent Attention for Efficient Disaggregated Prefill and Decode Inference</h3><p class="pub-summary" data-summary-zh="将潜在表示与注意力输入分散到多设备，减少张量并行中的重复缓存，无需重训即可提升潜在注意力的解码效率。">Partitions latent representations and attention inputs across devices to reduce duplicated MLA caches and enable efficient parallel decoding without retraining.</p><div class="pub-meta"><span class="pub-category">LLM</span><a class="arxiv-link" href="https://arxiv.org/abs/2508.15881" target="_blank" rel="noopener noreferrer" aria-describedby="pub-title-08">arXiv <span aria-hidden="true">↗</span></a></div></div>
           <div class="pub-venue"><span class="venue-badge">ASPLOS</span><span class="pub-year">2026</span></div>
         </li>
         <li class="pub-item" data-category="llm">
           <span class="pub-number" aria-hidden="true">03</span>
-          <div><h3 class="pub-title" id="pub-title-09">SSA: Sparse Sparse Attention by Aligning Full and Sparse Attention Outputs in Feature Space</h3><div class="pub-meta"><span class="pub-category">LLM</span><a class="arxiv-link" href="https://arxiv.org/abs/2511.20102" target="_blank" rel="noopener noreferrer" aria-describedby="pub-title-09">arXiv <span aria-hidden="true">↗</span></a></div></div>
+          <div><h3 class="pub-title" id="pub-title-09">SSA: Sparse Sparse Attention by Aligning Full and Sparse Attention Outputs in Feature Space</h3><p class="pub-summary" data-summary-zh="联合训练全注意力与稀疏注意力，并双向对齐输出特征，缓解稀疏注意力的训练推理分布错配与梯度流不完整问题。">Jointly trains full and sparse attention with bidirectional output alignment, addressing training–inference mismatch and incomplete gradient flow in sparse attention.</p><div class="pub-meta"><span class="pub-category">LLM</span><a class="arxiv-link" href="https://arxiv.org/abs/2511.20102" target="_blank" rel="noopener noreferrer" aria-describedby="pub-title-09">arXiv <span aria-hidden="true">↗</span></a></div></div>
           <div class="pub-venue"><span class="venue-badge">ICML</span><span class="pub-year">2026</span></div>
         </li>
         <li class="pub-item" data-category="llm">
           <span class="pub-number" aria-hidden="true">04</span>
-          <div><h3 class="pub-title" id="pub-title-10">HISA: Efficient Hierarchical Indexing for Fine-Grained Sparse Attention</h3><div class="pub-meta"><span class="pub-category">LLM</span><a class="arxiv-link" href="https://arxiv.org/abs/2603.28458" target="_blank" rel="noopener noreferrer" aria-describedby="pub-title-10">arXiv <span aria-hidden="true">↗</span></a></div></div>
+          <div><h3 class="pub-title" id="pub-title-10">HISA: Efficient Hierarchical Indexing for Fine-Grained Sparse Attention</h3><p class="pub-summary" data-summary-zh="先筛选候选块，再在块内细选词元，以层次化索引降低长上下文稀疏注意力的检索开销，无需额外训练。">Accelerates sparse-attention indexing by first selecting candidate blocks, then refining token selection within them, without requiring additional training.</p><div class="pub-meta"><span class="pub-category">LLM</span><a class="arxiv-link" href="https://arxiv.org/abs/2603.28458" target="_blank" rel="noopener noreferrer" aria-describedby="pub-title-10">arXiv <span aria-hidden="true">↗</span></a></div></div>
           <div class="pub-venue"><span class="venue-badge">CoLM</span><span class="pub-year">2026</span></div>
         </li>
         <li class="pub-item" data-category="llm">
           <span class="pub-number" aria-hidden="true">05</span>
-          <div><h3 class="pub-title" id="pub-title-15">From Final Artifacts to Trajectories: Retrospective Process Supervision for Evidence-Grounded Long-Form Generation</h3><div class="pub-meta"><span class="pub-category">LLM</span><a class="arxiv-link" href="https://arxiv.org/abs/2608.30461" target="_blank" rel="noopener noreferrer" aria-describedby="pub-title-15">arXiv <span aria-hidden="true">↗</span></a></div></div>
+          <div><h3 class="pub-title" id="pub-title-15">From Final Artifacts to Trajectories: Retrospective Process Supervision for Evidence-Grounded Long-Form Generation</h3><p class="pub-summary" data-summary-zh="从高质量成品文本反推并验证证据搜集轨迹，再利用成功重建的轨迹训练模型，提升长文本生成的证据支撑与忠实整合能力。">RetroGen reconstructs and verifies evidence-seeking trajectories from high-quality final artifacts, then trains on successful reconstructions to improve grounded long-form generation.</p><div class="pub-meta"><span class="pub-category">LLM</span><a class="arxiv-link" href="https://arxiv.org/abs/2608.30461" target="_blank" rel="noopener noreferrer" aria-describedby="pub-title-15">arXiv <span aria-hidden="true">↗</span></a></div></div>
           <div class="pub-venue"><span class="venue-badge">EMNLP</span><span class="pub-year">2026</span></div>
         </li>
         <li class="pub-item" data-category="llm">
           <span class="pub-number" aria-hidden="true">06</span>
-          <div><h3 class="pub-title" id="pub-title-16">ContextPilot: Teaching Agents for Proactive Context Management via Fine-grained RL</h3><div class="pub-meta"><span class="pub-category">LLM</span><a class="arxiv-link" href="https://arxiv.org/abs/2608.28476" target="_blank" rel="noopener noreferrer" aria-describedby="pub-title-16">arXiv <span aria-hidden="true">↗</span></a></div></div>
+          <div><h3 class="pub-title" id="pub-title-16">ContextPilot: Teaching Agents for Proactive Context Management via Fine-grained RL</h3><p class="pub-summary" data-summary-zh="结合规划、长期记忆与上下文卸载工具，通过细粒度强化学习训练智能体主动管理上下文，在精简工作上下文的同时改善长程推理。">Combines planning, long-term memory, and context offloading with fine-grained reinforcement learning to improve long-horizon reasoning while keeping working contexts compact.</p><div class="pub-meta"><span class="pub-category">LLM</span><a class="arxiv-link" href="https://arxiv.org/abs/2608.28476" target="_blank" rel="noopener noreferrer" aria-describedby="pub-title-16">arXiv <span aria-hidden="true">↗</span></a></div></div>
           <div class="pub-venue"><span class="venue-badge">EMNLP</span><span class="pub-year">2026</span></div>
         </li>
         <li class="pub-item" data-category="llm">
           <span class="pub-number" aria-hidden="true">07</span>
-          <div><h3 class="pub-title" id="pub-title-11">A Curriculum Learning Approach to Automated Reasoning with Large Language Models</h3><div class="pub-meta"><span class="pub-category">LLM</span><a class="arxiv-link" href="https://arxiv.org/abs/2410.21728" target="_blank" rel="noopener noreferrer" aria-describedby="pub-title-11">arXiv <span aria-hidden="true">↗</span></a></div></div>
+          <div><h3 class="pub-title" id="pub-title-11">A Curriculum Learning Approach to Automated Reasoning with Large Language Models</h3><p class="pub-summary" data-summary-zh="引导模型生成由易到难的相关问题，再用简单问题的解答作为示例，逐步辅助复杂问题求解，减少推理提示对人工的依赖。">Automates reasoning prompts with an easy-to-hard curriculum, using solutions to simpler related questions as demonstrations for solving more difficult ones.</p><div class="pub-meta"><span class="pub-category">LLM</span><a class="arxiv-link" href="https://arxiv.org/abs/2410.21728" target="_blank" rel="noopener noreferrer" aria-describedby="pub-title-11">arXiv <span aria-hidden="true">↗</span></a></div></div>
           <div class="pub-venue"><span class="venue-badge">ACL</span><span class="pub-year">2025</span></div>
         </li>
         <li class="pub-item" data-category="mllm">
           <span class="pub-number" aria-hidden="true">08</span>
-          <div><h3 class="pub-title" id="pub-title-12">Youtu-VL: Unleashing Visual Potential via Unified Vision-Language Supervision</h3><div class="pub-meta"><span class="pub-category">MLLM</span><a class="arxiv-link" href="https://arxiv.org/abs/2601.19798" target="_blank" rel="noopener noreferrer" aria-describedby="pub-title-12">arXiv <span aria-hidden="true">↗</span></a></div></div>
+          <div><h3 class="pub-title" id="pub-title-12">Youtu-VL: Unleashing Visual Potential via Unified Vision-Language Supervision</h3><p class="pub-summary" data-summary-zh="将视觉词元与语言共同作为预测目标，以统一自回归监督保留视觉细节，兼顾多模态理解与视觉任务。">Predicts visual tokens alongside language under unified autoregressive supervision, preserving visual detail for both multimodal understanding and vision-centric tasks.</p><div class="pub-meta"><span class="pub-category">MLLM</span><a class="arxiv-link" href="https://arxiv.org/abs/2601.19798" target="_blank" rel="noopener noreferrer" aria-describedby="pub-title-12">arXiv <span aria-hidden="true">↗</span></a></div></div>
           <div class="pub-venue"><span class="venue-badge preprint">arXiv</span><span class="pub-year">2026</span></div>
         </li>
         <li class="pub-item" data-category="mllm">
           <span class="pub-number" aria-hidden="true">09</span>
-          <div><h3 class="pub-title" id="pub-title-13">Toward Native Multimodal Modeling: A Roadmap</h3><div class="pub-meta"><span class="pub-category">MLLM</span><a class="arxiv-link" href="https://arxiv.org/abs/2605.25343" target="_blank" rel="noopener noreferrer" aria-describedby="pub-title-13">arXiv <span aria-hidden="true">↗</span></a></div></div>
+          <div><h3 class="pub-title" id="pub-title-13">Toward Native Multimodal Modeling: A Roadmap</h3><p class="pub-summary" data-summary-zh="定义多模态架构的原生性，按输入输出关系梳理模型设计空间，并系统总结数据、训练、部署与评估路线。">Defines architectural nativity and maps the design space of native multimodal models, covering input–output relationships, data, training, deployment, and evaluation.</p><div class="pub-meta"><span class="pub-category">MLLM</span><a class="arxiv-link" href="https://arxiv.org/abs/2605.25343" target="_blank" rel="noopener noreferrer" aria-describedby="pub-title-13">arXiv <span aria-hidden="true">↗</span></a></div></div>
           <div class="pub-venue"><span class="venue-badge">EMNLP</span><span class="pub-year">2026</span></div>
         </li>
         <li class="pub-item" data-category="mllm">
           <span class="pub-number" aria-hidden="true">10</span>
-          <div><h3 class="pub-title" id="pub-title-14">TangramPuzzle: Evaluating Multimodal Large Language Models with Compositional Spatial Reasoning</h3><div class="pub-meta"><span class="pub-category">MLLM</span><a class="arxiv-link" href="https://arxiv.org/abs/2601.16520" target="_blank" rel="noopener noreferrer" aria-describedby="pub-title-14">arXiv <span aria-hidden="true">↗</span></a></div></div>
+          <div><h3 class="pub-title" id="pub-title-14">TangramPuzzle: Evaluating Multimodal Large Language Models with Compositional Spatial Reasoning</h3><p class="pub-summary" data-summary-zh="以七巧板轮廓预测与拼装生成为任务，结合可机器验证的构造表达式和多解验证器，评估组合空间推理能力。">Evaluates compositional spatial reasoning through tangram outline prediction and assembly generation, using machine-verifiable expressions and a verifier that supports multiple valid solutions.</p><div class="pub-meta"><span class="pub-category">MLLM</span><a class="arxiv-link" href="https://arxiv.org/abs/2601.16520" target="_blank" rel="noopener noreferrer" aria-describedby="pub-title-14">arXiv <span aria-hidden="true">↗</span></a></div></div>
           <div class="pub-venue"><span class="venue-badge">EMNLP</span><span class="pub-year">2026</span></div>
         </li>
         <li class="pub-item" data-category="rag">
           <span class="pub-number" aria-hidden="true">11</span>
-          <div><h3 class="pub-title" id="pub-title-01">Youtu-GraphRAG: Vertically Unified Agents for Graph Retrieval-Augmented Complex Reasoning</h3><div class="pub-meta"><span class="pub-category">RAG & Agent</span><a class="arxiv-link" href="https://arxiv.org/abs/2508.19855" target="_blank" rel="noopener noreferrer" aria-describedby="pub-title-01">arXiv <span aria-hidden="true">↗</span></a></div></div>
+          <div><h3 class="pub-title" id="pub-title-01">Youtu-GraphRAG: Vertically Unified Agents for Graph Retrieval-Augmented Complex Reasoning</h3><p class="pub-summary" data-summary-zh="通过共享图模式统一知识抽取、结合拓扑与语义的社区组织、查询分解和迭代反思，衔接图构建与检索以支持复杂推理。">Unifies graph construction and retrieval through schema-guided extraction, topology-and-semantics-aware communities, query decomposition, and iterative reflection for complex reasoning.</p><div class="pub-meta"><span class="pub-category">RAG & Agent</span><a class="arxiv-link" href="https://arxiv.org/abs/2508.19855" target="_blank" rel="noopener noreferrer" aria-describedby="pub-title-01">arXiv <span aria-hidden="true">↗</span></a></div></div>
           <div class="pub-venue"><span class="venue-badge">ICLR</span><span class="pub-year">2026</span></div>
         </li>
         <li class="pub-item" data-category="rag">
           <span class="pub-number" aria-hidden="true">12</span>
-          <div><h3 class="pub-title" id="pub-title-02">Collision to Cognition: Hash-Driven Graph Construction for Efficient RAG</h3><div class="pub-meta"><span class="pub-category">RAG & Agent</span> <a class="arxiv-link" href="https://aclanthology.org/2026.acl-long.1156.pdf" target="_blank" rel="noopener noreferrer" aria-describedby="pub-title-02">ACL Anthology <span aria-hidden="true">↗</span></a></div></div>
+          <div><h3 class="pub-title" id="pub-title-02">Collision to Cognition: Hash-Driven Graph Construction for Efficient RAG</h3><p class="pub-summary" data-summary-zh="利用局部哈希碰撞构建全局图结构，以轻量位运算进行检索，降低图增强生成的构图成本，并提供可解释的连接依据。">MeshRAG builds global graph structure from local hash collisions and uses lightweight bitwise retrieval to reduce the cost of graph-based retrieval-augmented generation.</p><div class="pub-meta"><span class="pub-category">RAG & Agent</span> <a class="arxiv-link" href="https://aclanthology.org/2026.acl-long.1156.pdf" target="_blank" rel="noopener noreferrer" aria-describedby="pub-title-02">ACL Anthology <span aria-hidden="true">↗</span></a></div></div>
           <div class="pub-venue"><span class="venue-badge">ACL</span><span class="pub-year">2026</span></div>
         </li>
         <li class="pub-item" data-category="rag">
           <span class="pub-number" aria-hidden="true">13</span>
-          <div><h3 class="pub-title" id="pub-title-03">Query-Aware Knowledge Retrieval via Hyperbolic Structuring</h3><div class="pub-meta"><span class="pub-category">RAG & Agent</span> <a class="arxiv-link" href="https://aclanthology.org/2026.acl-long.986.pdf" target="_blank" rel="noopener noreferrer" aria-describedby="pub-title-03">ACL Anthology <span aria-hidden="true">↗</span></a></div></div>
+          <div><h3 class="pub-title" id="pub-title-03">Query-Aware Knowledge Retrieval via Hyperbolic Structuring</h3><p class="pub-summary" data-summary-zh="在双曲空间中结合显式实体关联与隐式查询感知连接，针对不同问题自适应组织知识图，改善静态图的检索适应性。">HyperRAG constructs query-specific graphs in hyperbolic space, combining explicit entity links with implicit query-aware connections to adapt knowledge retrieval to each question.</p><div class="pub-meta"><span class="pub-category">RAG & Agent</span> <a class="arxiv-link" href="https://aclanthology.org/2026.acl-long.986.pdf" target="_blank" rel="noopener noreferrer" aria-describedby="pub-title-03">ACL Anthology <span aria-hidden="true">↗</span></a></div></div>
           <div class="pub-venue"><span class="venue-badge">ACL</span><span class="pub-year">2026</span></div>
         </li>
         <li class="pub-item" data-category="rag">
           <span class="pub-number" aria-hidden="true">14</span>
-          <div><h3 class="pub-title" id="pub-title-04">PoLi-RL: A Point-to-List Reinforcement Learning Framework for Conditional Semantic Textual Similarity</h3><div class="pub-meta"><span class="pub-category">RAG & Agent</span><a class="arxiv-link" href="https://arxiv.org/abs/2510.04080" target="_blank" rel="noopener noreferrer" aria-describedby="pub-title-04">arXiv <span aria-hidden="true">↗</span></a></div></div>
+          <div><h3 class="pub-title" id="pub-title-04">PoLi-RL: A Point-to-List Reinforcement Learning Framework for Conditional Semantic Textual Similarity</h3><p class="pub-summary" data-summary-zh="面向条件语义相似度，采用两阶段强化学习课程，结合逐点、成对与列表级目标及细粒度排序奖励，缓解奖励优化困难。">Uses a two-stage reinforcement learning curriculum with pointwise, pairwise, and listwise objectives to improve conditional semantic similarity through finer-grained ranking rewards.</p><div class="pub-meta"><span class="pub-category">RAG & Agent</span><a class="arxiv-link" href="https://arxiv.org/abs/2510.04080" target="_blank" rel="noopener noreferrer" aria-describedby="pub-title-04">arXiv <span aria-hidden="true">↗</span></a></div></div>
           <div class="pub-venue"><span class="venue-badge">ICLR</span><span class="pub-year">2026</span></div>
         </li>
         <li class="pub-item" data-category="rag">
           <span class="pub-number" aria-hidden="true">15</span>
-          <div><h3 class="pub-title" id="pub-title-05">Enhancing Refusal Capabilities of Role-Playing Agents via Representation Space Analysis and Editing</h3><div class="pub-meta"><span class="pub-category">RAG & Agent</span><a class="arxiv-link" href="https://arxiv.org/abs/2409.16913" target="_blank" rel="noopener noreferrer" aria-describedby="pub-title-05">arXiv <span aria-hidden="true">↗</span></a></div></div>
+          <div><h3 class="pub-title" id="pub-title-05">Enhancing Refusal Capabilities of Role-Playing Agents via Representation Space Analysis and Editing</h3><p class="pub-summary" data-summary-zh="构建角色知识冲突评测，分析模型内部的回答与拒答表征，并通过轻量表征编辑提升角色扮演智能体的恰当拒答能力。">Benchmarks knowledge-conflicting requests and uses representation-space analysis and lightweight editing to help role-playing agents recognize when they should refuse an answer.</p><div class="pub-meta"><span class="pub-category">RAG & Agent</span><a class="arxiv-link" href="https://arxiv.org/abs/2409.16913" target="_blank" rel="noopener noreferrer" aria-describedby="pub-title-05">arXiv <span aria-hidden="true">↗</span></a></div></div>
           <div class="pub-venue"><span class="venue-badge">ACL</span><span class="pub-year">2025</span></div>
         </li>
         <li class="pub-item" data-category="rag">
           <span class="pub-number" aria-hidden="true">16</span>
-          <div><h3 class="pub-title" id="pub-title-06">Mac-SQL: A Multi-Agent Collaborative Framework for Text-to-SQL</h3><div class="pub-meta"><span class="pub-category">RAG & Agent</span><a class="arxiv-link" href="https://arxiv.org/abs/2312.11242" target="_blank" rel="noopener noreferrer" aria-describedby="pub-title-06">arXiv <span aria-hidden="true">↗</span></a></div></div>
+          <div><h3 class="pub-title" id="pub-title-06">Mac-SQL: A Multi-Agent Collaborative Framework for Text-to-SQL</h3><p class="pub-summary" data-summary-zh="通过多智能体协作分解问题、筛选相关数据库结构并修正错误查询，处理大规模数据库上的复杂文本转 SQL 任务。">Coordinates agents for question decomposition, database schema selection, and SQL refinement to handle complex text-to-SQL tasks over large databases.</p><div class="pub-meta"><span class="pub-category">RAG & Agent</span><a class="arxiv-link" href="https://arxiv.org/abs/2312.11242" target="_blank" rel="noopener noreferrer" aria-describedby="pub-title-06">arXiv <span aria-hidden="true">↗</span></a></div></div>
           <div class="pub-venue"><span class="venue-badge">COLING</span><span class="pub-year">2025</span></div>
         </li>
         <li class="pub-item" data-category="evaluate">
           <span class="pub-number" aria-hidden="true">17</span>
-          <div><h3 class="pub-title" id="pub-title-17">Sequential-NIAH: A Needle-In-A-Haystack Benchmark for Extracting Sequential Needles from Long Contexts</h3><div class="pub-meta"><span class="pub-category">Evaluate</span><a class="arxiv-link" href="https://aclanthology.org/2025.emnlp-main.1497/" target="_blank" rel="noopener noreferrer" aria-describedby="pub-title-17">ACL Anthology <span aria-hidden="true">↗</span></a></div></div>
+          <div><h3 class="pub-title" id="pub-title-17">Sequential-NIAH: A Needle-In-A-Haystack Benchmark for Extracting Sequential Needles from Long Contexts</h3><p class="pub-summary" data-summary-zh="在长上下文中设置具有时间或逻辑顺序的多条关键信息，同时检验模型提取结果的完整性与顺序一致性。">Tests whether models can recover multiple facts in the correct temporal or logical order from long contexts, assessing both completeness and sequential consistency.</p><div class="pub-meta"><span class="pub-category">Evaluate</span><a class="arxiv-link" href="https://aclanthology.org/2025.emnlp-main.1497/" target="_blank" rel="noopener noreferrer" aria-describedby="pub-title-17">ACL Anthology <span aria-hidden="true">↗</span></a></div></div>
           <div class="pub-venue"><span class="venue-badge">EMNLP</span><span class="pub-year">2025</span></div>
         </li>
         <li class="pub-item" data-category="evaluate">
           <span class="pub-number" aria-hidden="true">18</span>
-          <div><h3 class="pub-title" id="pub-title-18">FactGuard: Leveraging Multi-Agent Systems to Generate Answerable and Unanswerable Questions for Enhanced Long-Context LLM Extraction</h3><div class="pub-meta"><span class="pub-category">Evaluate</span><a class="arxiv-link" href="https://arxiv.org/abs/2504.05607" target="_blank" rel="noopener noreferrer" aria-describedby="pub-title-18">arXiv <span aria-hidden="true">↗</span></a></div></div>
+          <div><h3 class="pub-title" id="pub-title-18">FactGuard: Leveraging Multi-Agent Systems to Generate Answerable and Unanswerable Questions for Enhanced Long-Context LLM Extraction</h3><p class="pub-summary" data-summary-zh="通过多智能体协作自动生成可回答与不可回答的问题，评估长上下文信息提取的准确性，以及识别文本中没有答案的能力。">Automatically generates answerable and unanswerable questions through multi-agent collaboration to evaluate long-context extraction accuracy and reliable recognition of missing answers.</p><div class="pub-meta"><span class="pub-category">Evaluate</span><a class="arxiv-link" href="https://arxiv.org/abs/2504.05607" target="_blank" rel="noopener noreferrer" aria-describedby="pub-title-18">arXiv <span aria-hidden="true">↗</span></a></div></div>
           <div class="pub-venue"><span class="venue-badge">EMNLP</span><span class="pub-year">2026</span></div>
         </li>
         <li class="pub-item" data-category="evaluate">
           <span class="pub-number" aria-hidden="true">19</span>
-          <div><h3 class="pub-title" id="pub-title-19">APTBench: Benchmarking Agentic Potential of Base LLMs During Pre-Training</h3><div class="pub-meta"><span class="pub-category">Evaluate</span><a class="arxiv-link" href="https://arxiv.org/abs/2510.24397" target="_blank" rel="noopener noreferrer" aria-describedby="pub-title-19">arXiv <span aria-hidden="true">↗</span></a></div></div>
+          <div><h3 class="pub-title" id="pub-title-19">APTBench: Benchmarking Agentic Potential of Base LLMs During Pre-Training</h3><p class="pub-summary" data-summary-zh="将成功的智能体轨迹转为选择与补全任务，在预训练阶段轻量评估基座模型的规划和行动潜力，覆盖软件工程与深度研究。">Converts successful agent trajectories into multiple-choice and completion tasks, enabling lightweight evaluation of base models for planning and action during pre-training.</p><div class="pub-meta"><span class="pub-category">Evaluate</span><a class="arxiv-link" href="https://arxiv.org/abs/2510.24397" target="_blank" rel="noopener noreferrer" aria-describedby="pub-title-19">arXiv <span aria-hidden="true">↗</span></a></div></div>
           <div class="pub-venue"><span class="venue-badge preprint">arXiv</span><span class="pub-year">2025</span></div>
         </li>
         <li class="pub-item" data-category="evaluate">
           <span class="pub-number" aria-hidden="true">20</span>
-          <div><h3 class="pub-title" id="pub-title-20">From Atomic to Agentic: Towards Interpretable Evaluation of LLMs' Agentic Mathematical Capabilities</h3><div class="pub-meta"><span class="pub-category">Evaluate</span><a class="arxiv-link" href="https://arxiv.org/abs/2608.26950" target="_blank" rel="noopener noreferrer" aria-describedby="pub-title-20">arXiv <span aria-hidden="true">↗</span></a></div></div>
+          <div><h3 class="pub-title" id="pub-title-20">From Atomic to Agentic: Towards Interpretable Evaluation of LLMs' Agentic Mathematical Capabilities</h3><p class="pub-summary" data-summary-zh="将可复用的数学原子能力与规划、行动和反馈环节关联，从过程层面诊断智能体数学推理能力，而非仅检查最终答案。">Links reusable mathematical skills to planning, action, and feedback tasks, enabling process-level diagnosis of agentic mathematical reasoning beyond final-answer accuracy.</p><div class="pub-meta"><span class="pub-category">Evaluate</span><a class="arxiv-link" href="https://arxiv.org/abs/2608.26950" target="_blank" rel="noopener noreferrer" aria-describedby="pub-title-20">arXiv <span aria-hidden="true">↗</span></a></div></div>
           <div class="pub-venue"><span class="venue-badge">EMNLP</span><span class="pub-year">2026</span></div>
         </li>
       </ol>
@@ -604,7 +607,7 @@
         ['#publications-title', '精选论文'],
         ['#publications .section-note', '语言、视觉与智能体研究 · 2025–2026'],
         ['.publication-count > span', '篇论文'],
-        ['.search .sr-only', '搜索英文论文标题、研究类别、会议或年份'],
+        ['.search .sr-only', '搜索英文论文标题、中英文说明、研究类别、会议或年份'],
         ['#no-results', '未找到匹配论文，请尝试其他关键词或研究类别。'],
         ['#contact-title', '联系我'],
         ['.contact-section p', '交流研究、开源项目与值得分享的想法。'],
@@ -657,6 +660,10 @@
       document.querySelectorAll('.pub-item').forEach(item => {
         const heading = item.querySelector('.pub-title');
         heading.lang = 'en';
+        const summary = item.querySelector('.pub-summary');
+        if (summary) {
+          translationBindings.push({element:summary, mode:'text', en:summary.textContent, zh:summary.dataset.summaryZh || summary.textContent});
+        }
         const tag = item.querySelector('.pub-category');
         translationBindings.push({element:tag, mode:'text', en:tag.textContent, zh:categoryNames[item.dataset.category] || tag.textContent});
       });
@@ -683,9 +690,11 @@
       const count = document.getElementById('results-count');
       const empty = document.getElementById('no-results');
       let category = 'all';
-      // Index original titles and bilingual categories; filters survive a language change.
+      // Index original titles, bilingual summaries and categories; filters survive a language change.
       const searchable = new Map(items.map(item => [item, [
         item.querySelector('.pub-title').textContent,
+        item.querySelector('.pub-summary')?.textContent || '',
+        item.querySelector('.pub-summary')?.dataset.summaryZh || '',
         item.querySelector('.pub-category').textContent,
         categoryNames[item.dataset.category] || '',
         item.querySelector('.venue-badge').textContent,
