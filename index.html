@@ -252,6 +252,7 @@
     #publications .pub-category:before{content:"";height:5px;width:5px;border-radius:50%;background:currentColor;flex:none}
     #publications [data-category="llm"] .pub-category{background:#eaf0fa;border-color:#becde2;color:#355c8c}
     #publications [data-category="mllm"] .pub-category{background:#f0eafa;border-color:#d0c0e4;color:#715190}
+    #publications [data-category="evaluate"] .pub-category{background:#e5f2f2;border-color:#afd0d0;color:#286666}
     #publications .pub-venue{gap:8px;padding-top:1px}
     #publications .venue-badge{min-width:88px;display:inline-flex;align-items:center;justify-content:center;padding:7px 12px;border:1px solid #9bb6a4;border-radius:6px;background:#dfece2;color:#264f37;font-size:14px;font-weight:750;letter-spacing:.04em;line-height:1.5}
     #publications .venue-badge.preprint{background:#f4ecd9;border-color:#d5c494;color:#786024}
@@ -263,6 +264,7 @@
     #publications .filter[data-filter="rag"][aria-pressed="true"]{background:#e7f0e8;border-color:#a9c4b1;color:#2d5b42}
     #publications .filter[data-filter="llm"][aria-pressed="true"]{background:#eaf0fa;border-color:#afc3dd;color:#355c8c}
     #publications .filter[data-filter="mllm"][aria-pressed="true"]{background:#f0eafa;border-color:#c3acdd;color:#715190}
+    #publications .filter[data-filter="evaluate"][aria-pressed="true"]{background:#e5f2f2;border-color:#9fc5c5;color:#286666}
     @media(max-width:760px){#publications .pub-item{grid-template-columns:26px minmax(0,1fr) 96px;gap:15px}#publications .venue-badge{min-width:80px;font-size:13px;padding:6px 10px}}
     @media(max-width:580px){#publications .pub-item{grid-template-columns:22px minmax(0,1fr);gap:12px;padding:22px 0}#publications .pub-venue{grid-column:2;flex-direction:row;align-items:center;gap:12px;padding-top:0}#publications .pub-category{font-size:12px}#publications .venue-badge{min-width:76px;font-size:13px;padding:5px 10px}#publications .pub-year{font-size:12px}#publications .pub-meta{gap:9px;margin-top:10px}}
     @media screen{.hero h1{font-size:clamp(32px,4vw,48px)}}
@@ -354,7 +356,7 @@
       <div class="hero-copy">
         <div class="hero-identity">
           <h1 id="hero-name">Di Yin<span class="chinese-name" lang="zh-CN">尹迪</span></h1>
-          <p class="role">Principal Researcher & Team Leader</p>
+          <p class="role">Expert Researcher & Team Leader</p>
         </div>
         <p class="hero-description">I lead research at <strong>Tencent Youtu Lab</strong>, exploring large language models, multimodal intelligence, and agentic systems. My work bridges foundation models and real-world applications through open-source tools and benchmarks.</p>
         <div class="hero-actions">
@@ -374,7 +376,7 @@
     </div>
     <section id="about" class="section about-layout" aria-labelledby="about-title">
       <div>
-        <h2 id="about-title">A little about me.</h2>
+        <h2 id="about-title">Short bio</h2>
       </div>
       <div class="about-content">
         <p>My research spans <strong>model architecture optimization, native multimodal pre-training, and evaluation of large language models</strong>, with a focus on connecting advances in foundation models to practical applications. I led the team to complete native multimodal pre-training for two models: <strong>120B-A7B</strong> and <strong>30B-A3B</strong>.</p>
@@ -439,98 +441,124 @@
     <section id="publications" class="section" aria-labelledby="publications-title">
       <div class="section-heading">
         <div><h2 id="publications-title">Selected publications.</h2><p class="section-note">Research in language, vision, and agentic systems · 2025–2026</p></div>
-        <div class="publication-count"><strong>15</strong><span>publications</span></div>
+        <div class="publication-count"><strong>20</strong><span>publications</span></div>
       </div>
       
       <div class="publications-toolbar" id="publication-controls" hidden>
         <div class="filters" role="group" aria-label="Filter publications by research area">
-          <button class="filter" type="button" data-filter="all" aria-pressed="true" aria-controls="pub-list">All research<span class="filter-count">15</span></button>
-          <button class="filter" type="button" data-filter="rag" aria-pressed="false" aria-controls="pub-list">RAG & Agent<span class="filter-count">6</span></button>
-          <button class="filter" type="button" data-filter="llm" aria-pressed="false" aria-controls="pub-list">LLM<span class="filter-count">6</span></button>
+          <button class="filter" type="button" data-filter="all" aria-pressed="true" aria-controls="pub-list">All research<span class="filter-count">20</span></button>
+          <button class="filter" type="button" data-filter="llm" aria-pressed="false" aria-controls="pub-list">LLM<span class="filter-count">7</span></button>
           <button class="filter" type="button" data-filter="mllm" aria-pressed="false" aria-controls="pub-list">MLLM<span class="filter-count">3</span></button>
+          <button class="filter" type="button" data-filter="rag" aria-pressed="false" aria-controls="pub-list">RAG & Agent<span class="filter-count">6</span></button>
+          <button class="filter" type="button" data-filter="evaluate" aria-pressed="false" aria-controls="pub-list">Evaluate<span class="filter-count">4</span></button>
         </div>
         <label class="search"><svg class="icon" aria-hidden="true"><use href="#i-search"/></svg><span class="sr-only">Search publication titles, venues, or years</span><input type="search" id="pub-search" placeholder="Search publications…" autocomplete="off" aria-controls="pub-list"></label>
       </div>
       <!-- arXiv title/author matches checked on 2026-10-12. Keep unverified entries unlinked; retain original display titles and venues. -->
       <ol class="pub-list" id="pub-list">
-        <li class="pub-item" data-category="rag">
-          <span class="pub-number" aria-hidden="true">01</span>
-          <div><h3 class="pub-title" id="pub-title-01">Youtu-GraphRAG: Vertically Unified Agents for Graph Retrieval-Augmented Complex Reasoning</h3><div class="pub-meta"><span class="pub-category">RAG & Agent</span><a class="arxiv-link" href="https://arxiv.org/abs/2508.19855" target="_blank" rel="noopener noreferrer" aria-describedby="pub-title-01">arXiv <span aria-hidden="true">↗</span></a></div></div>
-          <div class="pub-venue"><span class="venue-badge">ICLR</span><span class="pub-year">2026</span></div>
-        </li>
-        <li class="pub-item" data-category="rag">
-          <span class="pub-number" aria-hidden="true">02</span>
-          <div><h3 class="pub-title" id="pub-title-02">Collision to Cognition: Hash-Driven Graph Construction for Efficient RAG</h3><div class="pub-meta"><span class="pub-category">RAG & Agent</span> <a class="arxiv-link" href="https://aclanthology.org/2026.acl-long.1156.pdf" target="_blank" rel="noopener noreferrer" aria-describedby="pub-title-02">ACL Anthology <span aria-hidden="true">↗</span></a></div></div>
-          <div class="pub-venue"><span class="venue-badge">ACL</span><span class="pub-year">2026</span></div>
-        </li>
-        <li class="pub-item" data-category="rag">
-          <span class="pub-number" aria-hidden="true">03</span>
-          <div><h3 class="pub-title" id="pub-title-03">Query-Aware Knowledge Retrieval via Hyperbolic Structuring</h3><div class="pub-meta"><span class="pub-category">RAG & Agent</span> <a class="arxiv-link" href="https://aclanthology.org/2026.acl-long.986.pdf" target="_blank" rel="noopener noreferrer" aria-describedby="pub-title-03">ACL Anthology <span aria-hidden="true">↗</span></a></div></div>
-          <div class="pub-venue"><span class="venue-badge">ACL</span><span class="pub-year">2026</span></div>
-        </li>
-        <li class="pub-item" data-category="rag">
-          <span class="pub-number" aria-hidden="true">04</span>
-          <div><h3 class="pub-title" id="pub-title-04">PoLi-RL: A Point-to-List Reinforcement Learning Framework for Conditional Semantic Textual Similarity</h3><div class="pub-meta"><span class="pub-category">RAG & Agent</span><a class="arxiv-link" href="https://arxiv.org/abs/2510.04080" target="_blank" rel="noopener noreferrer" aria-describedby="pub-title-04">arXiv <span aria-hidden="true">↗</span></a></div></div>
-          <div class="pub-venue"><span class="venue-badge">ICLR</span><span class="pub-year">2026</span></div>
-        </li>
-        <li class="pub-item" data-category="rag">
-          <span class="pub-number" aria-hidden="true">05</span>
-          <div><h3 class="pub-title" id="pub-title-05">Enhancing Refusal Capabilities of Role-Playing Agents via Representation Space Analysis and Editing</h3><div class="pub-meta"><span class="pub-category">RAG & Agent</span><a class="arxiv-link" href="https://arxiv.org/abs/2409.16913" target="_blank" rel="noopener noreferrer" aria-describedby="pub-title-05">arXiv <span aria-hidden="true">↗</span></a></div></div>
-          <div class="pub-venue"><span class="venue-badge">ACL</span><span class="pub-year">2025</span></div>
-        </li>
-        <li class="pub-item" data-category="rag">
-          <span class="pub-number" aria-hidden="true">06</span>
-          <div><h3 class="pub-title" id="pub-title-06">Mac-SQL: A Multi-Agent Collaborative Framework for Text-to-SQL</h3><div class="pub-meta"><span class="pub-category">RAG & Agent</span><a class="arxiv-link" href="https://arxiv.org/abs/2312.11242" target="_blank" rel="noopener noreferrer" aria-describedby="pub-title-06">arXiv <span aria-hidden="true">↗</span></a></div></div>
-          <div class="pub-venue"><span class="venue-badge">COLING</span><span class="pub-year">2025</span></div>
-        </li>
         <li class="pub-item" data-category="llm">
-          <span class="pub-number" aria-hidden="true">07</span>
+          <span class="pub-number" aria-hidden="true">01</span>
           <div><h3 class="pub-title" id="pub-title-07">Youtu-LLM: Unlocking the Native Agentic Potential for Lightweight Large Language Models</h3><div class="pub-meta"><span class="pub-category">LLM</span><a class="arxiv-link" href="https://arxiv.org/abs/2512.24618" target="_blank" rel="noopener noreferrer" aria-describedby="pub-title-07">arXiv <span aria-hidden="true">↗</span></a></div></div>
           <div class="pub-venue"><span class="venue-badge preprint">arXiv</span><span class="pub-year">2026</span></div>
         </li>
         <li class="pub-item" data-category="llm">
-          <span class="pub-number" aria-hidden="true">08</span>
+          <span class="pub-number" aria-hidden="true">02</span>
           <div><h3 class="pub-title" id="pub-title-08">TPLA: Tensor Parallel Latent Attention for Efficient Disaggregated Prefill and Decode Inference</h3><div class="pub-meta"><span class="pub-category">LLM</span><a class="arxiv-link" href="https://arxiv.org/abs/2508.15881" target="_blank" rel="noopener noreferrer" aria-describedby="pub-title-08">arXiv <span aria-hidden="true">↗</span></a></div></div>
           <div class="pub-venue"><span class="venue-badge">ASPLOS</span><span class="pub-year">2026</span></div>
         </li>
         <li class="pub-item" data-category="llm">
-          <span class="pub-number" aria-hidden="true">09</span>
+          <span class="pub-number" aria-hidden="true">03</span>
           <div><h3 class="pub-title" id="pub-title-09">SSA: Sparse Sparse Attention by Aligning Full and Sparse Attention Outputs in Feature Space</h3><div class="pub-meta"><span class="pub-category">LLM</span><a class="arxiv-link" href="https://arxiv.org/abs/2511.20102" target="_blank" rel="noopener noreferrer" aria-describedby="pub-title-09">arXiv <span aria-hidden="true">↗</span></a></div></div>
           <div class="pub-venue"><span class="venue-badge">ICML</span><span class="pub-year">2026</span></div>
         </li>
         <li class="pub-item" data-category="llm">
-          <span class="pub-number" aria-hidden="true">10</span>
+          <span class="pub-number" aria-hidden="true">04</span>
           <div><h3 class="pub-title" id="pub-title-10">HISA: Efficient Hierarchical Indexing for Fine-Grained Sparse Attention</h3><div class="pub-meta"><span class="pub-category">LLM</span><a class="arxiv-link" href="https://arxiv.org/abs/2603.28458" target="_blank" rel="noopener noreferrer" aria-describedby="pub-title-10">arXiv <span aria-hidden="true">↗</span></a></div></div>
           <div class="pub-venue"><span class="venue-badge">CoLM</span><span class="pub-year">2026</span></div>
         </li>
         <li class="pub-item" data-category="llm">
-          <span class="pub-number" aria-hidden="true">11</span>
+          <span class="pub-number" aria-hidden="true">05</span>
           <div><h3 class="pub-title" id="pub-title-15">From Final Artifacts to Trajectories: Retrospective Process Supervision for Evidence-Grounded Long-Form Generation</h3><div class="pub-meta"><span class="pub-category">LLM</span><a class="arxiv-link" href="https://arxiv.org/abs/2608.30461" target="_blank" rel="noopener noreferrer" aria-describedby="pub-title-15">arXiv <span aria-hidden="true">↗</span></a></div></div>
           <div class="pub-venue"><span class="venue-badge">EMNLP</span><span class="pub-year">2026</span></div>
         </li>
         <li class="pub-item" data-category="llm">
-          <span class="pub-number" aria-hidden="true">12</span>
+          <span class="pub-number" aria-hidden="true">06</span>
+          <div><h3 class="pub-title" id="pub-title-16">ContextPilot: Teaching Agents for Proactive Context Management via Fine-grained RL</h3><div class="pub-meta"><span class="pub-category">LLM</span><a class="arxiv-link" href="https://arxiv.org/abs/2608.28476" target="_blank" rel="noopener noreferrer" aria-describedby="pub-title-16">arXiv <span aria-hidden="true">↗</span></a></div></div>
+          <div class="pub-venue"><span class="venue-badge">EMNLP</span><span class="pub-year">2026</span></div>
+        </li>
+        <li class="pub-item" data-category="llm">
+          <span class="pub-number" aria-hidden="true">07</span>
           <div><h3 class="pub-title" id="pub-title-11">A Curriculum Learning Approach to Automated Reasoning with Large Language Models</h3><div class="pub-meta"><span class="pub-category">LLM</span><a class="arxiv-link" href="https://arxiv.org/abs/2410.21728" target="_blank" rel="noopener noreferrer" aria-describedby="pub-title-11">arXiv <span aria-hidden="true">↗</span></a></div></div>
           <div class="pub-venue"><span class="venue-badge">ACL</span><span class="pub-year">2025</span></div>
         </li>
         <li class="pub-item" data-category="mllm">
-          <span class="pub-number" aria-hidden="true">13</span>
+          <span class="pub-number" aria-hidden="true">08</span>
           <div><h3 class="pub-title" id="pub-title-12">Youtu-VL: Unleashing Visual Potential via Unified Vision-Language Supervision</h3><div class="pub-meta"><span class="pub-category">MLLM</span><a class="arxiv-link" href="https://arxiv.org/abs/2601.19798" target="_blank" rel="noopener noreferrer" aria-describedby="pub-title-12">arXiv <span aria-hidden="true">↗</span></a></div></div>
           <div class="pub-venue"><span class="venue-badge preprint">arXiv</span><span class="pub-year">2026</span></div>
         </li>
         <li class="pub-item" data-category="mllm">
-          <span class="pub-number" aria-hidden="true">14</span>
+          <span class="pub-number" aria-hidden="true">09</span>
           <div><h3 class="pub-title" id="pub-title-13">Toward Native Multimodal Modeling: A Roadmap</h3><div class="pub-meta"><span class="pub-category">MLLM</span><a class="arxiv-link" href="https://arxiv.org/abs/2605.25343" target="_blank" rel="noopener noreferrer" aria-describedby="pub-title-13">arXiv <span aria-hidden="true">↗</span></a></div></div>
           <div class="pub-venue"><span class="venue-badge">EMNLP</span><span class="pub-year">2026</span></div>
         </li>
         <li class="pub-item" data-category="mllm">
-          <span class="pub-number" aria-hidden="true">15</span>
+          <span class="pub-number" aria-hidden="true">10</span>
           <div><h3 class="pub-title" id="pub-title-14">TangramPuzzle: Evaluating Multimodal Large Language Models with Compositional Spatial Reasoning</h3><div class="pub-meta"><span class="pub-category">MLLM</span><a class="arxiv-link" href="https://arxiv.org/abs/2601.16520" target="_blank" rel="noopener noreferrer" aria-describedby="pub-title-14">arXiv <span aria-hidden="true">↗</span></a></div></div>
+          <div class="pub-venue"><span class="venue-badge">EMNLP</span><span class="pub-year">2026</span></div>
+        </li>
+        <li class="pub-item" data-category="rag">
+          <span class="pub-number" aria-hidden="true">11</span>
+          <div><h3 class="pub-title" id="pub-title-01">Youtu-GraphRAG: Vertically Unified Agents for Graph Retrieval-Augmented Complex Reasoning</h3><div class="pub-meta"><span class="pub-category">RAG & Agent</span><a class="arxiv-link" href="https://arxiv.org/abs/2508.19855" target="_blank" rel="noopener noreferrer" aria-describedby="pub-title-01">arXiv <span aria-hidden="true">↗</span></a></div></div>
+          <div class="pub-venue"><span class="venue-badge">ICLR</span><span class="pub-year">2026</span></div>
+        </li>
+        <li class="pub-item" data-category="rag">
+          <span class="pub-number" aria-hidden="true">12</span>
+          <div><h3 class="pub-title" id="pub-title-02">Collision to Cognition: Hash-Driven Graph Construction for Efficient RAG</h3><div class="pub-meta"><span class="pub-category">RAG & Agent</span> <a class="arxiv-link" href="https://aclanthology.org/2026.acl-long.1156.pdf" target="_blank" rel="noopener noreferrer" aria-describedby="pub-title-02">ACL Anthology <span aria-hidden="true">↗</span></a></div></div>
+          <div class="pub-venue"><span class="venue-badge">ACL</span><span class="pub-year">2026</span></div>
+        </li>
+        <li class="pub-item" data-category="rag">
+          <span class="pub-number" aria-hidden="true">13</span>
+          <div><h3 class="pub-title" id="pub-title-03">Query-Aware Knowledge Retrieval via Hyperbolic Structuring</h3><div class="pub-meta"><span class="pub-category">RAG & Agent</span> <a class="arxiv-link" href="https://aclanthology.org/2026.acl-long.986.pdf" target="_blank" rel="noopener noreferrer" aria-describedby="pub-title-03">ACL Anthology <span aria-hidden="true">↗</span></a></div></div>
+          <div class="pub-venue"><span class="venue-badge">ACL</span><span class="pub-year">2026</span></div>
+        </li>
+        <li class="pub-item" data-category="rag">
+          <span class="pub-number" aria-hidden="true">14</span>
+          <div><h3 class="pub-title" id="pub-title-04">PoLi-RL: A Point-to-List Reinforcement Learning Framework for Conditional Semantic Textual Similarity</h3><div class="pub-meta"><span class="pub-category">RAG & Agent</span><a class="arxiv-link" href="https://arxiv.org/abs/2510.04080" target="_blank" rel="noopener noreferrer" aria-describedby="pub-title-04">arXiv <span aria-hidden="true">↗</span></a></div></div>
+          <div class="pub-venue"><span class="venue-badge">ICLR</span><span class="pub-year">2026</span></div>
+        </li>
+        <li class="pub-item" data-category="rag">
+          <span class="pub-number" aria-hidden="true">15</span>
+          <div><h3 class="pub-title" id="pub-title-05">Enhancing Refusal Capabilities of Role-Playing Agents via Representation Space Analysis and Editing</h3><div class="pub-meta"><span class="pub-category">RAG & Agent</span><a class="arxiv-link" href="https://arxiv.org/abs/2409.16913" target="_blank" rel="noopener noreferrer" aria-describedby="pub-title-05">arXiv <span aria-hidden="true">↗</span></a></div></div>
+          <div class="pub-venue"><span class="venue-badge">ACL</span><span class="pub-year">2025</span></div>
+        </li>
+        <li class="pub-item" data-category="rag">
+          <span class="pub-number" aria-hidden="true">16</span>
+          <div><h3 class="pub-title" id="pub-title-06">Mac-SQL: A Multi-Agent Collaborative Framework for Text-to-SQL</h3><div class="pub-meta"><span class="pub-category">RAG & Agent</span><a class="arxiv-link" href="https://arxiv.org/abs/2312.11242" target="_blank" rel="noopener noreferrer" aria-describedby="pub-title-06">arXiv <span aria-hidden="true">↗</span></a></div></div>
+          <div class="pub-venue"><span class="venue-badge">COLING</span><span class="pub-year">2025</span></div>
+        </li>
+        <li class="pub-item" data-category="evaluate">
+          <span class="pub-number" aria-hidden="true">17</span>
+          <div><h3 class="pub-title" id="pub-title-17">Sequential-NIAH: A Needle-In-A-Haystack Benchmark for Extracting Sequential Needles from Long Contexts</h3><div class="pub-meta"><span class="pub-category">Evaluate</span><a class="arxiv-link" href="https://aclanthology.org/2025.emnlp-main.1497/" target="_blank" rel="noopener noreferrer" aria-describedby="pub-title-17">ACL Anthology <span aria-hidden="true">↗</span></a></div></div>
+          <div class="pub-venue"><span class="venue-badge">EMNLP</span><span class="pub-year">2025</span></div>
+        </li>
+        <li class="pub-item" data-category="evaluate">
+          <span class="pub-number" aria-hidden="true">18</span>
+          <div><h3 class="pub-title" id="pub-title-18">FactGuard: Leveraging Multi-Agent Systems to Generate Answerable and Unanswerable Questions for Enhanced Long-Context LLM Extraction</h3><div class="pub-meta"><span class="pub-category">Evaluate</span><a class="arxiv-link" href="https://arxiv.org/abs/2504.05607" target="_blank" rel="noopener noreferrer" aria-describedby="pub-title-18">arXiv <span aria-hidden="true">↗</span></a></div></div>
+          <div class="pub-venue"><span class="venue-badge">EMNLP</span><span class="pub-year">2026</span></div>
+        </li>
+        <li class="pub-item" data-category="evaluate">
+          <span class="pub-number" aria-hidden="true">19</span>
+          <div><h3 class="pub-title" id="pub-title-19">APTBench: Benchmarking Agentic Potential of Base LLMs During Pre-Training</h3><div class="pub-meta"><span class="pub-category">Evaluate</span><a class="arxiv-link" href="https://arxiv.org/abs/2510.24397" target="_blank" rel="noopener noreferrer" aria-describedby="pub-title-19">arXiv <span aria-hidden="true">↗</span></a></div></div>
+          <div class="pub-venue"><span class="venue-badge preprint">arXiv</span><span class="pub-year">2025</span></div>
+        </li>
+        <li class="pub-item" data-category="evaluate">
+          <span class="pub-number" aria-hidden="true">20</span>
+          <div><h3 class="pub-title" id="pub-title-20">From Atomic to Agentic: Towards Interpretable Evaluation of LLMs' Agentic Mathematical Capabilities</h3><div class="pub-meta"><span class="pub-category">Evaluate</span><a class="arxiv-link" href="https://arxiv.org/abs/2608.26950" target="_blank" rel="noopener noreferrer" aria-describedby="pub-title-20">arXiv <span aria-hidden="true">↗</span></a></div></div>
           <div class="pub-venue"><span class="venue-badge">EMNLP</span><span class="pub-year">2026</span></div>
         </li>
       </ol>
       <div id="no-results" class="empty-state" hidden>No matching publications. Try another keyword or research area.</div>
-      <div class="publication-bottom"><span id="results-count" role="status" aria-live="polite">Showing 15 of 15 publications</span><a class="text-link" href="https://scholar.google.com/citations?user=wY7HV2gAAAAJ&hl=zh-CN" target="_blank" rel="noopener noreferrer">Full list on Google Scholar<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+      <div class="publication-bottom"><span id="results-count" role="status" aria-live="polite">Showing 20 of 20 publications</span><a class="text-link" href="https://scholar.google.com/citations?user=wY7HV2gAAAAJ&hl=zh-CN" target="_blank" rel="noopener noreferrer">Full list on Google Scholar<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
     </section>
     <section class="contact-section" aria-labelledby="contact-title">
       <div><h2 id="contact-title">Let's connect.</h2><p>Research, open source, and ideas worth sharing.</p></div>
@@ -594,6 +622,7 @@
         ['[data-filter="rag"]', 'RAG与智能体'],
         ['[data-filter="llm"]', '大语言模型'],
         ['[data-filter="mllm"]', '多模态语言模型'],
+        ['[data-filter="evaluate"]', '评测'],
         ['.publication-bottom .text-link', '在谷歌学术查看完整列表'],
         ['.back-to-top', '返回顶部']
       ].forEach(([selector, value]) => bindTranslation(selector, value, 'node'));
@@ -623,7 +652,7 @@
           if (chinese) translationBindings.push({element:tag, mode:'text', en:tag.textContent, zh:chinese});
         });
       });
-      const categoryNames = {rag:'RAG 与智能体', llm:'大语言模型 · LLM', mllm:'多模态大语言模型 · MLLM'};
+      const categoryNames = {rag:'RAG 与智能体', llm:'大语言模型 · LLM', mllm:'多模态大语言模型 · MLLM', evaluate:'评测 · Evaluate'};
       // Paper titles remain in their original English in both interface languages.
       document.querySelectorAll('.pub-item').forEach(item => {
         const heading = item.querySelector('.pub-title');
