@@ -315,6 +315,17 @@
     .visitor-fallback{padding:3px 8px;border:1px solid var(--line);border-radius:4px;background:var(--soft);color:var(--muted);font-size:11px;line-height:1.6}
     @media(max-width:580px){.footer-right{justify-content:center;gap:10px 16px}}
     @media print{.visitor-badge{display:none!important}}
+    /* Smaller open-source cards without changing the responsive column layout. */
+    @media screen{
+      #projects .projects-grid{gap:14px}
+      #projects .project-card{padding:17px 18px 15px}
+      #projects .card-top{margin-bottom:12px}
+      #projects .project-symbol{width:32px;height:32px;border-radius:8px}
+      #projects .project-symbol .icon{width:19px;height:19px}
+      #projects .project-card h4{margin-bottom:8px}
+      #projects .project-card p{margin-bottom:16px}
+      #projects .project-meta{padding-top:10px}
+    }
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}}
     @media print{body{background:#fff;font-size:11px}.container{width:100%}.site-header,.research-art,.hero-actions,.hero-bottom,.publications-toolbar,.copy-email,.back-to-top,.toast{display:none!important}.hero{display:block;padding:12px 0 25px}h1{font-size:55px}.hero-description{max-width:none}.section{padding:24px 0}.section-heading{margin-bottom:16px}.about-layout{grid-template-columns:160px 1fr}.projects-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.project-card{break-inside:avoid;box-shadow:none;padding:14px}.pub-item{break-inside:avoid;padding:10px 0}.pub-item[hidden]{display:grid!important}.pub-title{font-size:11px}.empty-state{display:none!important}.contact-section{padding:24px 0}.contact-actions .button{background:transparent;color:var(--ink)}footer{padding:14px 0}a[href^="http"]{text-decoration:none}}
   </style>
@@ -457,8 +468,7 @@
       
       <div class="publications-toolbar" id="publication-controls" hidden>
         <div class="filters" role="group" aria-label="Filter publications by research area">
-          <button class="filter" type="button" data-filter="all" aria-pressed="true" aria-controls="pub-list">All research<span class="filter-count">20</span></button>
-          <button class="filter" type="button" data-filter="llm" aria-pressed="false" aria-controls="pub-list">LLM<span class="filter-count">7</span></button>
+          <button class="filter" type="button" data-filter="llm" aria-pressed="true" aria-controls="pub-list">LLM<span class="filter-count">7</span></button>
           <button class="filter" type="button" data-filter="mllm" aria-pressed="false" aria-controls="pub-list">MLLM<span class="filter-count">3</span></button>
           <button class="filter" type="button" data-filter="rag" aria-pressed="false" aria-controls="pub-list">RAG & Agent<span class="filter-count">6</span></button>
           <button class="filter" type="button" data-filter="evaluate" aria-pressed="false" aria-controls="pub-list">Evaluate<span class="filter-count">4</span></button>
@@ -643,7 +653,6 @@
         ['.profile-links a[href^="mailto:"]', '邮箱'],
         ['.scroll-cue', '进一步了解'],
         ['#projects .section-heading .text-link', 'GitHub 主页'],
-        ['[data-filter="all"]', '全部研究'],
         ['[data-filter="rag"]', 'RAG与智能体'],
         ['[data-filter="llm"]', '大语言模型'],
         ['[data-filter="mllm"]', '多模态语言模型'],
@@ -714,7 +723,7 @@
       const search = document.getElementById('pub-search');
       const count = document.getElementById('results-count');
       const empty = document.getElementById('no-results');
-      let category = 'all';
+      let category = 'llm';
       // Index original titles, bilingual summaries and categories; filters survive a language change.
       const searchable = new Map(items.map(item => [item, [
         item.querySelector('.pub-title').textContent,
