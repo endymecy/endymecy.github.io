@@ -7,7 +7,7 @@
   <meta name="theme-color" content="#f8f9f6">
   <title>Di Yin · Research & Open Source</title>
   <style>
-    :root{--paper:#fff;--white:#fff;--ink:#202e29;--muted:#647169;--green:#355e4d;--green-dark:#294b3d;--soft:#eaf0e8;--line:#dfe5dc;--serif:Georgia,"Times New Roman","Songti SC",serif;--sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,"PingFang SC",sans-serif;--radius:14px}
+    :root{--paper:#fff;--white:#fff;--ink:#111;--muted:#333;--pub-muted:#647169;--green:#355e4d;--green-dark:#294b3d;--soft:#eaf0e8;--line:#dfe5dc;--serif:Georgia,"Times New Roman","Songti SC",serif;--sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,"PingFang SC",sans-serif;--radius:14px}
     *{box-sizing:border-box}
     [hidden]{display:none!important}
     html{scroll-behavior:smooth;scroll-padding-top:100px}
@@ -244,7 +244,7 @@
     /* Emphasize publication venue and research area without changing metadata. */
     #publications .pub-item{grid-template-columns:34px minmax(0,1fr) max-content;gap:22px;padding:24px 0}
     #publications .pub-title{line-height:1.75;font-weight:550}
-    #publications .pub-summary{margin:8px 0 0;font-size:13px;line-height:1.8;color:var(--muted);font-weight:400;overflow-wrap:anywhere}
+    #publications .pub-summary{margin:8px 0 0;font-size:13px;line-height:1.8;color:var(--pub-muted);font-weight:400;overflow-wrap:anywhere}
     html[lang="zh-CN"] #publications .pub-summary{line-height:1.9}
     @media print{#publications .pub-summary{font-size:10px;line-height:1.6;margin-top:4px}}
     #publications .pub-title a{color:#294e41;text-decoration:underline;text-decoration-color:#becfc2;text-decoration-thickness:1px;text-underline-offset:4px;transition:color .2s,text-decoration-color .2s}
@@ -287,7 +287,7 @@
     .language-option{display:inline-flex;align-items:center;justify-content:center;min-width:40px;min-height:32px;padding:5px 9px;border:1px solid transparent;border-radius:4px;background:transparent;color:#5c6f5e;font-size:12px;font-weight:600;line-height:1.5;white-space:nowrap;transition:background .2s,color .2s}
     .language-option:hover{color:#274f36;background:#e3eadf}
     .language-option[aria-pressed="true"]{background:#fff;color:#264e37;border-color:#cfdbca;box-shadow:0 1px 3px rgba(32,46,41,.05)}
-    #publications .pub-translation{margin:7px 0 0;font-size:13px;line-height:1.85;font-weight:450;color:var(--muted);overflow-wrap:anywhere}
+    #publications .pub-translation{margin:7px 0 0;font-size:13px;line-height:1.85;font-weight:450;color:var(--pub-muted);overflow-wrap:anywhere}
     .translation-note{font-size:12px;line-height:1.8;color:var(--muted);margin:-8px 0 20px}
     html[lang="zh-CN"] h2{font-family:var(--sans);font-size:28px;font-weight:600;line-height:1.45;letter-spacing:.02em}
     html[lang="zh-CN"] #about h2{font-size:28px}
@@ -320,6 +320,20 @@
       #projects .project-card p{margin-bottom:16px}
       #projects .project-meta{padding-top:10px}
     }
+    /* Neutral black typography; preserve muted paper summaries and accent surfaces. */
+    .brand-mark,.chinese-name,.eyebrow,.focus-item,.group-label h3,.tag{color:var(--ink)}
+    .nav-links a,.nav-links .nav-contact,.nav-links a[aria-current="location"],.nav-links a:hover{color:var(--ink)}
+    .hero-description,.about-content p,.contact-section p{color:var(--ink)}
+    #projects .project-card p{color:var(--pub-muted)}
+    .button-secondary,.profile-links a,.profile-links a:hover,.text-link,.back-to-top{color:var(--ink)}
+    .section-index span:first-child,.language-option,.language-option:hover,.language-option[aria-pressed="true"]{color:var(--ink)}
+    .brand-caption,.affiliation,.small-label,.section-note,.group-description,.platform,.art-top,.art-footer,.toast{color:var(--muted)}
+    .search input::placeholder{color:var(--muted)}
+    #publications .pub-title,#publications .pub-title a,#publications .pub-title a:hover{color:var(--ink)}
+    #publications .pub-item .pub-category,#publications .venue-badge,#publications .venue-badge.preprint{color:var(--ink)}
+    #publications .pub-year,#publications .pub-number{color:var(--muted)}
+    #publications .arxiv-link,#publications .arxiv-link:hover,#publications .filter,#publications .filter:hover,#publications .filter[data-filter][aria-pressed="true"],#publications .publication-count strong{color:var(--ink)}
+    .button-primary{color:var(--white)}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}}
     @media print{body{background:#fff;font-size:11px}.container{width:100%}.site-header,.research-art,.hero-actions,.hero-bottom,.publications-toolbar,.copy-email,.back-to-top,.toast{display:none!important}.hero{display:block;padding:12px 0 25px}h1{font-size:55px}.hero-description{max-width:none}.section{padding:24px 0}.section-heading{margin-bottom:16px}.about-layout{grid-template-columns:160px 1fr}.projects-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.project-card{break-inside:avoid;box-shadow:none;padding:14px}.pub-item{break-inside:avoid;padding:10px 0}.pub-item[hidden]{display:grid!important}.pub-title{font-size:11px}.empty-state{display:none!important}.contact-section{padding:24px 0}.contact-actions .button{background:transparent;color:var(--ink)}footer{padding:14px 0}a[href^="http"]{text-decoration:none}}
   </style>
