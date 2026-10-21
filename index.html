@@ -242,7 +242,7 @@
     @media(max-width:580px){.hero{grid-template-columns:106px minmax(0,1fr);gap:20px 18px;padding:30px 0}.hero-copy{display:contents;animation:none}.profile-photo{grid-column:1;grid-row:1;max-width:106px;padding:4px;border-radius:9px;align-self:center}.profile-photo img{border-radius:5px}.hero-identity{grid-column:2;grid-row:1;min-width:0;align-self:center}.hero h1{font-size:40px;margin:0 0 10px}.hero .chinese-name{display:block;font-size:21px;line-height:1.5;margin:7px 0 0;transform:none}.hero .role{font-size:14px;line-height:1.65}.hero-description,.hero-actions,.hero .profile-links{grid-column:1 / -1;margin:0}.hero-description{max-width:none;font-size:14px;line-height:1.85}.hero-actions{gap:10px}.hero .profile-links{gap:20px}.about-layout{grid-template-columns:minmax(0,1fr);gap:20px}.about-layout h2{font-size:31px}.projects-grid{grid-template-columns:minmax(0,1fr)}.section-heading{margin-bottom:22px}.hero-bottom{padding:16px 0}.focus-list{gap:10px 16px}.project-card{padding:21px 22px}}
     @media(max-width:360px){.hero{grid-template-columns:88px minmax(0,1fr);column-gap:15px}.profile-photo{max-width:88px}.hero h1{font-size:36px}.hero .chinese-name{font-size:19px}.hero .role{font-size:13px}}
     /* Emphasize publication venue and research area without changing metadata. */
-    #publications .pub-item{grid-template-columns:34px minmax(0,1fr) 116px;gap:22px;padding:24px 0}
+    #publications .pub-item{grid-template-columns:34px minmax(0,1fr) max-content;gap:22px;padding:24px 0}
     #publications .pub-title{line-height:1.75;font-weight:550}
     #publications .pub-summary{margin:8px 0 0;font-size:13px;line-height:1.8;color:var(--muted);font-weight:400;overflow-wrap:anywhere}
     html[lang="zh-CN"] #publications .pub-summary{line-height:1.9}
@@ -256,7 +256,8 @@
     #publications [data-category="llm"] .pub-category{background:#eaf0fa;border-color:#becde2;color:#355c8c}
     #publications [data-category="mllm"] .pub-category{background:#f0eafa;border-color:#d0c0e4;color:#715190}
     #publications [data-category="evaluate"] .pub-category{background:#e5f2f2;border-color:#afd0d0;color:#286666}
-    #publications .pub-venue{gap:8px;padding-top:1px}
+    #publications .pub-venue{flex-direction:row;flex-wrap:nowrap;align-items:center;justify-content:flex-end;gap:8px;padding-top:1px;white-space:nowrap}
+    #publications .pub-venue>span{flex-shrink:0}
     #publications .venue-badge{min-width:88px;display:inline-flex;align-items:center;justify-content:center;padding:7px 12px;border:1px solid #9bb6a4;border-radius:6px;background:#dfece2;color:#264f37;font-size:14px;font-weight:750;letter-spacing:.04em;line-height:1.5}
     #publications .venue-badge.preprint{background:#f4ecd9;border-color:#d5c494;color:#786024}
     #publications .pub-year{font-size:13px;font-weight:600;color:#566253;letter-spacing:.03em}
@@ -268,8 +269,8 @@
     #publications .filter[data-filter="llm"][aria-pressed="true"]{background:#eaf0fa;border-color:#afc3dd;color:#355c8c}
     #publications .filter[data-filter="mllm"][aria-pressed="true"]{background:#f0eafa;border-color:#c3acdd;color:#715190}
     #publications .filter[data-filter="evaluate"][aria-pressed="true"]{background:#e5f2f2;border-color:#9fc5c5;color:#286666}
-    @media(max-width:760px){#publications .pub-item{grid-template-columns:26px minmax(0,1fr) 96px;gap:15px}#publications .venue-badge{min-width:80px;font-size:13px;padding:6px 10px}}
-    @media(max-width:580px){#publications .pub-item{grid-template-columns:22px minmax(0,1fr);gap:12px;padding:22px 0}#publications .pub-venue{grid-column:2;flex-direction:row;align-items:center;gap:12px;padding-top:0}#publications .pub-category{font-size:12px}#publications .venue-badge{min-width:76px;font-size:13px;padding:5px 10px}#publications .pub-year{font-size:12px}#publications .pub-meta{gap:9px;margin-top:10px}}
+    @media(max-width:760px){#publications .pub-item{grid-template-columns:26px minmax(0,1fr) max-content;gap:15px}#publications .venue-badge{min-width:80px;font-size:13px;padding:6px 10px}}
+    @media(max-width:580px){#publications .pub-item{grid-template-columns:22px minmax(0,1fr);gap:12px;padding:22px 0}#publications .pub-venue{grid-column:2;flex-direction:row;align-items:center;justify-content:flex-start;gap:8px;padding-top:0}#publications .pub-category{font-size:12px}#publications .venue-badge{min-width:76px;font-size:13px;padding:5px 10px}#publications .pub-year{font-size:12px}#publications .pub-meta{gap:9px;margin-top:10px}}
     @media screen{.hero h1{font-size:clamp(32px,4vw,48px)}}
     #about.about-layout{grid-template-columns:minmax(0,1fr);gap:24px}
     #about .about-content{min-width:0;width:100%}
@@ -394,10 +395,9 @@
         <h2 id="about-title">Short bio</h2>
       </div>
       <div class="about-content">
-        <p>My research focuses on <strong>LLM pre-training and architecture optimization</strong>, multimodal modeling and evaluation, <strong>agents</strong>, and <strong>RAG</strong>.</p>
-        <p>I led the team to train three large language models (<strong>2B, 4B, 30B-A3B</strong>) and two native multimodal large language models (<strong>120B-A7B, 32B-A4B</strong>).</p>
+        <p>I received my master's degree from the Department of Computer Science at Nanjing Normal University in 2014. Before 2023, my research focused on data analysis, machine learning, and multimodal understanding.</p>
+        <p>Over the past three years, my research has focused on <strong>LLM pre-training and architecture optimization</strong>, <strong>LLM data construction and evaluation</strong>, <strong>agents</strong>, and <strong>RAG</strong>. I led the team to train three large language models (<strong>2B, 4B, 30B-A3B</strong>) and two native multimodal large language models (<strong>120B-A7B, 32B-A4B</strong>), and open-sourced multiple Agent- and RAG-related frameworks and models.</p>
         <p class="academic-service">I serve as a reviewer for ICLR, NeurIPS and ACL. I have published <strong>50+ papers</strong> with <strong>1,400+ Google Scholar citations</strong>; my personal GitHub projects have earned <strong>6,000+ stars</strong>.</p>
-        <p class="current-focus"><svg class="icon" aria-hidden="true"><use href="#i-spark"/></svg><span><span class="current-focus-label">Current research focus</span><strong>Native multimodal pre-training</strong> and <strong>unified architectures for understanding and generation</strong>.</span></p>
       </div>
     </section>
     <section id="projects" class="section" aria-labelledby="projects-title">
@@ -645,10 +645,9 @@
         ['.back-to-top', '返回顶部']
       ].forEach(([selector, value]) => bindTranslation(selector, value, 'node'));
       bindTranslation('.hero-description', '我在<strong>腾讯优图实验室</strong>带领团队开展大语言模型、多模态大语言模型、RAG等的研究。', 'html');
-      bindTranslation('.about-content > p:nth-of-type(1)', '研究聚焦<strong>大语言模型预训练与架构优化</strong>、多模态建模与评测、<strong>智能体</strong>及<strong>检索增强生成（RAG）</strong>。', 'html');
-      bindTranslation('.about-content > p:nth-of-type(2)', '带领团队完成了三款大语言模型（<strong>2B、4B、30B-A3B</strong>）及两款原生多模态大语言模型（<strong>120B-A7B、32B-A4B</strong>）的训练。', 'html');
+      bindTranslation('.about-content > p:nth-of-type(1)', '我2014年硕士毕业于南京师范大学计算机系。2023年之前的研究主要包括数据分析、机器学习、多模态理解等。', 'html');
+      bindTranslation('.about-content > p:nth-of-type(2)', '最近三年的研究聚焦在<strong>LLM 预训练和结构优化</strong>、<strong>LLM数据构建与评估</strong>、<strong>Agent</strong>、<strong>RAG</strong>等方面。带领团队完成了三款大语言模型（<strong>2B、4B、30B-A3B</strong>）及两款原生多模态大语言模型（<strong>120B-A7B、32B-A4B</strong>）的训练，并开源了多个Agent和RAG相关的框架和模型。', 'html');
       bindTranslation('.academic-service', '担任 ICLR、NeurIPS、ACL 审稿人，发表<strong>50 余篇论文</strong>，获<strong>1,400 余次谷歌学术引用</strong>；个人 GitHub 项目累计获<strong>6,000 余个 Star</strong>。', 'html');
-      bindTranslation('.current-focus > span', '<span class="current-focus-label">当前研究重点</span><strong>原生多模态预训练</strong>与<strong>理解、生成一体化的统一架构</strong>。', 'html');
       const groupDescriptions = ['模型与多模态理解', '检索、推理与知识'];
       document.querySelectorAll('#projects .group-description').forEach((element, index) => {
         if (groupDescriptions[index]) translationBindings.push({element, mode:'text', en:element.textContent, zh:groupDescriptions[index]});
