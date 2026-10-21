@@ -273,13 +273,6 @@
     @media screen{.hero h1{font-size:clamp(32px,4vw,48px)}}
     #about.about-layout{grid-template-columns:minmax(0,1fr);gap:24px}
     #about .about-content{min-width:0;width:100%}
-    .research-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin:20px 0 0;padding:10px 0;border:0;border-radius:0;background:transparent}
-    .research-stat{display:flex;flex-direction:column;gap:5px;min-width:0;padding:0 20px}
-    .research-stat+.research-stat{border-left:1px solid var(--line)}
-    .research-stat dt{font-size:13px;line-height:1.65;font-weight:400;color:var(--muted);overflow-wrap:anywhere}
-    .research-stat dd{order:-1;margin:0;font-family:var(--sans);font-size:18px;line-height:1.35;font-weight:500;letter-spacing:-.02em;font-variant-numeric:tabular-nums;color:var(--muted)}
-    @media(max-width:580px){.research-stats{margin-top:18px;padding:8px 0}.research-stat{gap:4px;padding:0 11px}.research-stat dt{font-size:12px}.research-stat dd{font-size:16px}}
-    @media(max-width:360px){.research-stat{padding:0 9px}.research-stat dd{font-size:16px}}
     #about .current-focus{gap:17px;margin-top:26px;padding:24px 26px;border:1px solid #b9cebb;border-left:4px solid #487452;border-radius:10px;background:#eaf2e6;color:#314c36;font-size:15px;font-weight:500;line-height:1.85;box-shadow:0 5px 18px rgba(47,77,48,.04)}
     #about .current-focus>.icon{width:22px;height:22px;margin-top:3px;color:#487452}
     #about .current-focus>span{min-width:0}
@@ -401,15 +394,10 @@
         <h2 id="about-title">Short bio</h2>
       </div>
       <div class="about-content">
-        <p>My research spans <strong>model architecture optimization, native multimodal pre-training, and evaluation of large language models</strong>, with a focus on connecting advances in foundation models to practical applications. I led the team to complete the training of three large language models, <strong>2B</strong>, <strong>4B</strong>, and <strong>30B-A3B</strong>, as well as two native multimodal large language models, <strong>120B-A7B</strong> and <strong>32B-A4B</strong>.</p>
-        <p>My work centers on three core pillars: <strong>LLM pre-training and architecture optimization</strong>, <strong>Agent</strong>, and <strong>RAG</strong>. Through robust, open-source tools and benchmarks, I aim to bridge the gap between foundation models and real-world applications.</p>
-        <p  class="academic-service">I serve as a reviewer for leading conferences, including ICLR, NeurIPS and ACL.</p>
-        <dl class="research-stats" aria-label="Research and open-source impact">
-          <div class="research-stat"><dt data-stat-label="papers">Papers published</dt><dd>50+</dd></div>
-          <div class="research-stat"><dt data-stat-label="citations">Google Scholar citations</dt><dd>1,400+</dd></div>
-          <div class="research-stat"><dt data-stat-label="stars">Personal GitHub stars</dt><dd>6,000+</dd></div>
-        </dl>
-        <p class="current-focus"><svg class="icon" aria-hidden="true"><use href="#i-spark"/></svg><span><span class="current-focus-label">Current research focus</span>My current work focuses on the training of <strong>native multimodal pre-trained models</strong> and the exploration of <strong>unified model architectures</strong> for both <strong>understanding and generation</strong>.</span></p>
+        <p>My research focuses on <strong>LLM pre-training and architecture optimization</strong>, multimodal modeling and evaluation, <strong>agents</strong>, and <strong>RAG</strong>.</p>
+        <p>I led the team to train three large language models (<strong>2B, 4B, 30B-A3B</strong>) and two native multimodal large language models (<strong>120B-A7B, 32B-A4B</strong>).</p>
+        <p class="academic-service">I serve as a reviewer for ICLR, NeurIPS and ACL. I have published <strong>50+ papers</strong> with <strong>1,400+ Google Scholar citations</strong>; my personal GitHub projects have earned <strong>6,000+ stars</strong>.</p>
+        <p class="current-focus"><svg class="icon" aria-hidden="true"><use href="#i-spark"/></svg><span><span class="current-focus-label">Current research focus</span><strong>Native multimodal pre-training</strong> and <strong>unified architectures for understanding and generation</strong>.</span></p>
       </div>
     </section>
     <section id="projects" class="section" aria-labelledby="projects-title">
@@ -629,10 +617,6 @@
         ['.focus-item:nth-of-type(3)', '智能体'],
         ['.focus-item:nth-of-type(4)', '检索增强生成（RAG）'],
         ['#about-title', '关于我'],
-        ['.academic-service', '我担任 ICLR、NeurIPS（NIPS）、ACL等顶级学术会议的审稿人。'],
-        ['[data-stat-label="papers"]', '发表论文'],
-        ['[data-stat-label="citations"]', '谷歌学术引用'],
-        ['[data-stat-label="stars"]', '个人 GitHub Star'],
         ['#projects-title', '开源项目'],
         ['#projects .section-note', '从基模到实际应用。'],
         ['#publications-title', '精选论文'],
@@ -661,9 +645,10 @@
         ['.back-to-top', '返回顶部']
       ].forEach(([selector, value]) => bindTranslation(selector, value, 'node'));
       bindTranslation('.hero-description', '我在<strong>腾讯优图实验室</strong>带领团队开展大语言模型、多模态大语言模型、RAG等的研究。', 'html');
-      bindTranslation('.about-content > p:nth-of-type(1)', '我的研究涵盖<strong>大语言模型架构优化、原生多模态预训练、模型评测</strong>等方面，致力于将基础模型的研究进展转化为实际应用。带领团队完成了<strong>2B</strong>、<strong>4B</strong>、<strong>30B-A3B</strong>三款大语言模型，以及<strong>120B-A7B</strong>、<strong>32B-A4B</strong>两款原生多模态大语言模型的训练。', 'html');
-      bindTranslation('.about-content > p:nth-of-type(2)', '我主要围绕三个核心方向开展工作：<strong>大语言模型预训练与架构优化</strong>、<strong>智能体（Agent）</strong>和<strong>检索增强生成（RAG）</strong>。我们希望通过可靠的开源工具和评测基准，缩小基础模型与实际应用之间的差距。', 'html');
-      bindTranslation('.current-focus > span', '<span class="current-focus-label">当前研究重点</span>我目前专注于<strong>原生多模态预训练模型</strong>的训练，并探索同时支持<strong>理解与生成</strong>的<strong>统一模型架构</strong>。', 'html');
+      bindTranslation('.about-content > p:nth-of-type(1)', '研究聚焦<strong>大语言模型预训练与架构优化</strong>、多模态建模与评测、<strong>智能体</strong>及<strong>检索增强生成（RAG）</strong>。', 'html');
+      bindTranslation('.about-content > p:nth-of-type(2)', '带领团队完成了三款大语言模型（<strong>2B、4B、30B-A3B</strong>）及两款原生多模态大语言模型（<strong>120B-A7B、32B-A4B</strong>）的训练。', 'html');
+      bindTranslation('.academic-service', '担任 ICLR、NeurIPS、ACL 审稿人，发表<strong>50 余篇论文</strong>，获<strong>1,400 余次谷歌学术引用</strong>；个人 GitHub 项目累计获<strong>6,000 余个 Star</strong>。', 'html');
+      bindTranslation('.current-focus > span', '<span class="current-focus-label">当前研究重点</span><strong>原生多模态预训练</strong>与<strong>理解、生成一体化的统一架构</strong>。', 'html');
       const groupDescriptions = ['模型与多模态理解', '检索、推理与知识'];
       document.querySelectorAll('#projects .group-description').forEach((element, index) => {
         if (groupDescriptions[index]) translationBindings.push({element, mode:'text', en:element.textContent, zh:groupDescriptions[index]});
@@ -704,7 +689,6 @@
         ['.profile-photo img', 'alt', '尹迪（Di Yin）'],
         ['.profile-links', 'aria-label', '学术主页与联系方式'],
         ['.filters', 'aria-label', '按研究方向筛选论文'],
-        ['.research-stats', 'aria-label', '学术与开源成果'],
         ['#pub-search', 'placeholder', '搜索论文、会议或年份…'],
         ['#copy-email', 'aria-label', '复制邮箱地址'],
         ['#copy-email', 'title', '复制邮箱地址'],
