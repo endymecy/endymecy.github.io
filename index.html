@@ -410,7 +410,7 @@
       </div>
       <div class="about-content">
         <p>I received my master's degree from the Department of Computer Science at Nanjing Normal University in 2014. Before 2023, my research focused on data analysis, machine learning, and multimodal understanding.</p>
-        <p>Over the past three years, my research has focused on <strong>LLM pre-training and architecture optimization</strong>, <strong>LLM data construction and evaluation</strong>, <strong>agents</strong>, and <strong>RAG</strong>. I led the team to train three large language models (<strong>2B, 4B, 30B-A3B</strong>) and two native multimodal large language models (<strong>120B-A7B, 32B-A4B</strong>), and open-sourced multiple Agent- and RAG-related frameworks and models.</p>
+        <p>Over the past three years, my research has focused on <strong>LLM pre-training and architecture optimization</strong>, <strong>LLM data construction and evaluation</strong>, <strong>agents</strong>, and <strong>RAG</strong>. I led the team to train three large language models (<strong>2B, 4B, 30B-A3B</strong>) and three native multimodal MoE large models in large, medium, and small sizes (<strong>640B-A31B, 120B-A7B, 32B-A4B</strong>), and open-sourced multiple Agent- and RAG-related frameworks and models.</p>
         <p class="academic-service">I serve as a reviewer for ICLR, NeurIPS and ACL. I have published <strong>50+ papers</strong> with <strong>1,400+ Google Scholar citations</strong>; my personal GitHub projects have earned <strong>6,000+ stars</strong>.</p>
       </div>
     </section>
@@ -660,7 +660,7 @@
       ].forEach(([selector, value]) => bindTranslation(selector, value, 'node'));
       bindTranslation('.hero-description', '我在<strong>腾讯优图实验室</strong>带领团队开展大语言模型、多模态大语言模型、RAG等的研究。', 'html');
       bindTranslation('.about-content > p:nth-of-type(1)', '我2014年硕士毕业于南京师范大学计算机系。2023年之前的研究主要包括数据分析、机器学习、多模态理解等。', 'html');
-      bindTranslation('.about-content > p:nth-of-type(2)', '最近三年的研究聚焦在<strong>LLM 预训练和结构优化</strong>、<strong>LLM数据构建与评估</strong>、<strong>Agent</strong>、<strong>RAG</strong>等方面。带领团队完成了三款大语言模型（<strong>2B、4B、30B-A3B</strong>）及两款原生多模态大语言模型（<strong>120B-A7B、32B-A4B</strong>）的训练，并开源了多个Agent和RAG相关的框架和模型。', 'html');
+      bindTranslation('.about-content > p:nth-of-type(2)', '最近三年的研究聚焦在<strong>LLM 预训练和结构优化</strong>、<strong>LLM数据构建与评估</strong>、<strong>Agent</strong>、<strong>RAG</strong>等方面。带领团队完成了三款大语言模型（<strong>2B、4B、30B-A3B</strong>）及大中小三款原生多模态 MoE 大模型（<strong>640B-A31B、120B-A7B、32B-A4B</strong>）的训练，并开源了多个Agent和RAG相关的框架和模型。', 'html');
       bindTranslation('.academic-service', '担任 ICLR、NeurIPS、ACL 审稿人，发表<strong>50 余篇论文</strong>，获<strong>1,400 余次谷歌学术引用</strong>；个人 GitHub 项目累计获<strong>6,000 余个 Star</strong>。', 'html');
       const groupDescriptions = ['模型与多模态理解', '检索、推理与知识'];
       document.querySelectorAll('#projects .group-description').forEach((element, index) => {
